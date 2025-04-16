@@ -1,0 +1,63 @@
+[
+    {
+      "Name": "Mr Ram",
+      "image": "/images/Ram.png",
+      "position": "Chief Executive Officer",
+      "description": "Overall head of the company, responsible for strategic vision, decision-making, and company performance."
+    },
+    {
+      "Name": "Mr Ram",
+      "image": "/images/Ram.png",
+      "position": "IT Director",
+      "description": "Leads IT department or tech teams, overseeing software development, infrastructure, and IT support."
+    },
+    {
+      "Name": "Mr Ram",
+      "image": "/images/Ram.png",
+      "position": "Project Manager",
+      "description": "Plans and oversees specific projects; ensures they are completed on time and within budget."
+    },
+    {
+      "Name": "Mr Ram",
+      "image": "/images/Ram.png",
+      "position": "IT Operations Manager",
+      "description": "Manages internal IT operations, including servers, networks, and support teams."
+    },
+    {
+      "Name": "Mr Ram",
+      "image": "/images/Ram.png",
+      "position": "DevOps Manager",
+      "description": "Leads the DevOps team, ensuring smooth integration between development and operations."
+    },
+    {
+      "Name": "Mr Ram",
+      "image": "/images/Ram.png",
+      "position": "Software Engineer",
+      "description": "Builds and maintains software applications; can specialize in frontend, backend, or full-stack."
+    },
+    {
+      "Name": "Mr Ram",
+      "image": "/images/Ram.png",
+      "position": "Cybersecurity Analyst",
+      "description": "Protects systems from security breaches; monitors threats and implements security measures."
+    },
+    {
+      "Name": "Mr Ram",
+      "image": "/images/Ram.png",
+      "position": "UX/UI Designer",
+      "description": "Designs user experiences and interfaces; focuses on usability and aesthetics."
+    },
+    {
+      "Name": "Mr Ram",
+      "image": "/images/Ram.png",
+      "position": "QA Engineer / Tester",
+      "description": "Tests software for bugs; ensures quality and reliability before release."
+    },
+    {
+      "Name": "Mr Ram",
+      "image": "/images/Ram.png",
+      "position": "Junior Developer",
+      "description": "Entry-level software developer; learns and assists in coding and debugging."
+    }
+  ]
+  

@@ -1,0 +1,28 @@
+import Course from "@/app/ui/course";
+import Link from "next/link";
+import { roboto } from "@/app/ui/fonts";
+const Courses = () => {
+  return (
+    <>
+      <div className="relative bg-[#AFAFFF] w-full px-8 py-8">
+        <h1 className="title text-center text-3xl font-bold mx-8 my-8">
+          Courses
+        </h1>
+        <div className="relative z-10">
+          <Course />
+        </div>
+        <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-[#D9D9D9] from-0% via-[#D9D9D9] via-5% to-transparent to-30% z-20 pointer-events-none" />
+        <div className="relative z-30 mt-4 text-center">
+          <Link
+            href="/"
+            className={`${roboto.className} antialiased font-bold underline`}
+          >
+            See More &gt;&gt;
+          </Link>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Courses;

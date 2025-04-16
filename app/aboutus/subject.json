@@ -1,0 +1,83 @@
+[
+    {
+      "title": "C PROGRAMMING",
+      "image": "/images/c_programming.png",
+      "description": "Learn the fundamentals of structured programming using the C language."
+    },
+    {
+      "title": "E- GOVERNANCE",
+      "image": "/images/e_governance.png",
+      "description": "Explore the use of digital tools to improve government services and processes."
+    },
+    {
+      "title": "PYTHON PROGRAMMING",
+      "image": "/images/python_programming.png",
+      "description": "Understand Python programming for software development and automation."
+    },
+    {
+      "title": "DATABASE MANAGEMENT SYSTEM",
+      "image": "/images/dbms.png",
+      "description": "Study how to design, use, and manage relational databases effectively."
+    },
+    {
+      "title": "INTERNET AND INTRANET",
+      "image": "/images/internet_intranet.png",
+      "description": "Explore communication technologies used in global and internal networks."
+    },
+    {
+      "title": "TENSORFLOW",
+      "image": "/images/tensorflow.png",
+      "description": "Dive into machine learning with Google's TensorFlow framework."
+    },
+    {
+      "title": "WEB TECHNOLOGY",
+      "image": "/images/web_technology.png",
+      "description": "Learn how websites and web applications are developed and deployed."
+    },
+    {
+      "title": "OOP(Object Oriented Programming)",
+      "image": "/images/oop.png",
+      "description": "Master object-oriented principles like classes, inheritance, and polymorphism."
+    },
+    {
+      "title": "INFORMATION SYSTEM",
+      "image": "/images/information_system.png",
+      "description": "Understand systems that collect, process, and distribute information."
+    },
+    {
+      "title": "BIG DATA TECHNOLOGIES",
+      "image": "/images/big_data.png",
+      "description": "Work with tools and techniques to process large volumes of data."
+    },
+    {
+      "title": "COMPUTER NETWORK AND SECURITY",
+      "image": "/images/computer_network_.png",
+      "description": "Learn networking fundamentals along with cybersecurity principles."
+    },
+    {
+      "title": "DATA STRUCTURE AND ALGORITHM",
+      "image": "/images/dsa.png",
+      "description": "Develop efficient problem-solving skills using data structures and algorithms."
+    },
+    {
+      "title": "OBJECT ORIENTED ANALYSIS AND DESIGN",
+      "image": "/images/oo_ad.png",
+      "description": "Model and design software systems using object-oriented techniques."
+    },
+    {
+      "title": "DISTRIBUTED SYSTEM",
+      "image": "/images/distributed_system.png",
+      "description": "Explore systems that run across multiple computers to achieve a common goal."
+    },
+    {
+      "title": "INFORMATION SECURITY AND AUDIT",
+      "image": "/images/info_security_audit.png",
+      "description": "Study methods to protect data and audit information systems."
+    },
+    {
+      "title": "NETWORK SECURITY AND ANALYSIS",
+      "image": "/images/network_security_analysis.png",
+      "description": "Understand threats and safeguards in network communication systems."
+    }
+  ]
+  
