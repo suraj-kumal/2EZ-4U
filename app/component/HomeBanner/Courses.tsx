@@ -11,7 +11,7 @@ const Courses = () => {
         <div className="relative z-10">
           <Course />
         </div>
-        <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-[#D9D9D9] from-0% via-[#D9D9D9] via-5% to-transparent to-30% z-20 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-[#D9D9D9] from-0% via-[#D9D9D9] via-5% to-transparent to-15% md:to-30% z-20 pointer-events-none" />
         <div className="relative z-30 mt-4 text-center">
           <Link
             href="/"

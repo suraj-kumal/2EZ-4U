@@ -102,7 +102,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation Menu with Animation */}
       <div
-        className={`md:hidden fixed z-1000 w-full bg-gradient-to-r from-blue-600 via-blue-500 to-purple-400 overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`md:hidden fixed z-1000 w-full bg-[#1675ab] overflow-hidden transition-all duration-300 ease-in-out ${
           isOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
