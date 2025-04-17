@@ -9,8 +9,7 @@ const Page = () => {
   return (
     <div className="px-8 py-8">
       <div className="upperSection">
-        {/* Text About section */}
-        <div className="flex flex-col items-center justify-center p-4 sm:p-8 md:p-12 max-w-4xl mx-auto text-center mb-4 sm:mb-8">
+        <div className="flex items-center justify-center sm:flex-row flex-col-reverse p-4 sm:p-8 md:p-12 max-w-4xl mx-auto text-center mb-4 sm:mb-8">
           <p
             className="text-xs sm:text-sm md:text-base text-gray-700 px-2 sm:px-4"
             style={{ textAlign: "justify" }}
@@ -29,7 +28,7 @@ const Page = () => {
 
         {/* Image About 1st section */}
         <div className="container mx-auto px-4 py-6 sm:py-8 md:py-12">
-          <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-6 md:gap-8">
+          <div className="flex flex-col-reverse md:flex-row justify-between items-center md:items-start gap-6 md:gap-8">
             <div className="w-full md:w-1/2 items-center">
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center md:text-left mb-4 md:mb-6 relative z-10">
                 Our Mission
@@ -113,7 +112,7 @@ const Page = () => {
         </div>
         {/* Image About 3rd section */}
         <div className="container mx-4 my-4 px-4 py-6 sm:py-8 md:py-12">
-          <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-4 md:gap-8">
+          <div className="flex flex-col-reverse sm:flex-col-reverse md:flex-row justify-center md:justify-between items-center md:items-start gap-4 md:gap-8">
             <div className="w-full md:w-1/2">
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center md:text-left mb-4 md:mb-6 relative z-10">
                 Our Vision
