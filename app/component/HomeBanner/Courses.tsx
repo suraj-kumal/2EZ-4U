@@ -4,7 +4,7 @@ import { roboto } from "@/app/ui/fonts";
 const Courses = () => {
   return (
     <>
-      <div className="relative bg-[#AFAFFF] w-full px-8 py-8">
+      <div className="relative bg-[#6AAAD0] w-full px-8 py-8">
         <h1 className="title text-center text-3xl font-bold mx-8 my-8">
           Courses
         </h1>

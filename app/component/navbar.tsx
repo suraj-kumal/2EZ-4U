@@ -20,12 +20,13 @@ const Navbar = () => {
   }, [isOpen]);
 
   return (
-    <nav className="bg-gradient-to-r from-blue-600 via-blue-500 to-purple-400 shadow-md">
+    //className="bg-gradient-to-r from-blue-600 via-blue-500 to-purple-400 shadow-md"
+    <nav className="bg-[#1675ab] shadow-md">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo Section */}
         <Link href="/">
           <div className="flex items-center space-x-2 cursor-pointer logo">
-            <div className="bg-white text-blue-600 font-bold text-3xl px-3 py-1">
+            <div className="bg-white text-[#1675ab] font-bold text-3xl px-3 py-1">
               E
             </div>
             <div className="flex flex-col">

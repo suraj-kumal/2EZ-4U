@@ -5,7 +5,7 @@ const HomeYoutube = () => {
   const playlists = YoutubeH();
 
   return (
-    <div className="bg-[#AFAFFF] h-full px-8 py-8">
+    <div className="bg-[#6AAAD0] h-full px-8 py-8">
       <h1 className="text-2xl font-bold text-center mb-8">Playlists</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 mx-4 my-4">

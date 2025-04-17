@@ -1,13 +1,14 @@
 const Footer = () => {
   return (
-    <footer className="bg-[radial-gradient(circle,_#666666_0%,_#000000_100%)] text-white">
+    //className="bg-[radial-gradient(circle,_#666666_0%,_#000000_100%)] text-white
+    <footer className="bg-[#1675ab] text-white">
       {/* Main Footer Content */}
 
       <div className="container mx-auto px-16 py-12 flex flex-col md:flex-row justify-between items-start">
         {/* Logo Section */}
         <div className="mb-6 md:mb-0">
           <div className="flex items-center space-x-2">
-            <div className="bg-white text-blue-600 font-bold text-3xl px-3 py-1">
+            <div className="bg-white text-[#1675ab] font-bold text-3xl px-3 py-1">
               E
             </div>
             <div className="flex flex-col">
