@@ -111,8 +111,9 @@ const Page = () => {
           </div>
         </div>
         {/* Image About 3rd section */}
-        <div className="container mx-4 my-4 px-4 py-6 sm:py-8 md:py-12">
-          <div className="flex flex-col-reverse sm:flex-col-reverse md:flex-row justify-center md:justify-between items-center md:items-start gap-4 md:gap-8">
+        {/* <div className="container mx-4 my-4 px-4 py-6 sm:py-8 md:py-12 sm:mx-0"> */}
+        <div className="container mx-0 my-0 px-4 py-6 sm:py-8 md:py-12 sm:mx-0 md:mx-4 md:my-4">
+          <div className="flex flex-col-reverse sm:flex-col-reverse md:flex-row justify-center md:justify-between items-center md:items-start gap-4 md:gap-8 ">
             <div className="w-full md:w-1/2">
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center md:text-left mb-4 md:mb-6 relative z-10">
                 Our Vision
