@@ -6,7 +6,7 @@ const Footer = () => {
 
       <div className="container mx-auto px-16 py-12 flex flex-col md:flex-row justify-between items-start">
         {/* Logo Section */}
-        <div className="mb-6 md:mb-0">
+        <div className="mx-6 md:mb-0">
           <div className="flex items-center space-x-2">
             <div className="bg-white text-[#1675ab] font-bold text-3xl px-3 py-1">
               E
@@ -30,8 +30,8 @@ const Footer = () => {
         </div>
 
         {/* Contact Information */}
-        <div className="mx-6">
-          <h2 className="font-bold text-lg mb-4">ContactUs</h2>
+        <div className="mx-6 my-6 lg:mx-6 lg:my-0">
+          <h2 className="font-bold text-lg mb-4 underline">Contact us</h2>
           <div className="space-y-2">
             <p>Jwagal,Lalitpur,Nepal</p>
             <p>Phone: +977-9840143772</p>
