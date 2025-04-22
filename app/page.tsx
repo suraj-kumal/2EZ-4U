@@ -3,7 +3,7 @@ import HomeBanner from "./component/HomeBanner/HomeBanner";
 import HomeYoutube from "./component/HomeBanner/HomeYoutube";
 const page = () => {
   return (
-    <div className="">
+    <div className="MAIN-PAGE">
       <HomeBanner />
       <Courses />
       <HomeYoutube />
