@@ -1,16 +1,16 @@
+// app/course/description/[slug]/page.tsx
 import fetchSubjects from "@/app/Data/fetchsubjects";
 import Link from "next/link";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 
-// Update the type to match Next.js expectations
-type Props = {
-  params: {
-    slug: string;
-  };
-};
-
-export default async function SubjectPage({ params }: Props) {
-  const { slug } = params;
+// Remove the explicit type annotation and let Next.js infer it
+export default async function SubjectPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  // Force TypeScript to treat params.slug as a string
+  const slug = params.slug as string;
 
   const subjects = await fetchSubjects();
   const subject = subjects.find((s: { slug: string }) => s.slug === slug);
