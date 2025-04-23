@@ -9,7 +9,7 @@ type PageProps = {
 };
 
 export default async function SubjectPage({ params }: PageProps) {
-  const { slug } = await params;
+  const { slug } = params;
 
   const subjects = await fetchSubjects();
   const subject = subjects.find((s: { slug: string }) => s.slug === slug);
