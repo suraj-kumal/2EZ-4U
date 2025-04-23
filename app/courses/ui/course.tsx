@@ -5,6 +5,7 @@ import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 const Course = async () => {
   let subjectList;
+
   try {
     subjectList = await fetchSubjects();
   } catch (error) {
@@ -16,9 +17,9 @@ const Course = async () => {
   }
 
   return (
-    <div className="allhomecourses">
+    <div className="allcourses">
       <div className="px-4 py-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-9">
-        {subjectList.slice(0, 8).map(
+        {subjectList.map(
           (
             item: {
               slug: string;
@@ -40,6 +41,7 @@ const Course = async () => {
                   height={150}
                   className="w-24 h-24 rounded-2xl object-cover"
                   alt={`${item.title} image`}
+                  priority={true}
                 />
                 <div className="flex flex-col justify-center h-full">
                   <h2 className="font-bold text-xs">{item.title}</h2>

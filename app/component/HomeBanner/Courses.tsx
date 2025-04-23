@@ -14,8 +14,8 @@ const Courses = () => {
         <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-[#D9D9D9] from-0% via-[#D9D9D9] via-5% to-transparent to-15% md:to-30% z-20 pointer-events-none" />
         <div className="relative z-30 mt-4 text-center">
           <Link
-            href="/"
-            className={`${roboto.className} antialiased font-bold underline`}
+            href="/courses"
+            className={`${roboto.className} antialiased font-semibold underline underline-offset-4 transition-colors duration-200`}
           >
             See More &gt;&gt;
           </Link>

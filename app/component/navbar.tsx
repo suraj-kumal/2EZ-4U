@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import "@/app/global.css";
 import Link from "next/link";
+import { styleText } from "util";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -20,7 +21,6 @@ const Navbar = () => {
   }, [isOpen]);
 
   return (
-    //className="bg-gradient-to-r from-blue-600 via-blue-500 to-purple-400 shadow-md"
     <nav className="bg-[#1675ab] shadow-md">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo Section */}
@@ -77,7 +77,7 @@ const Navbar = () => {
 
         {/* Desktop Navigation Links */}
         <div className="hidden md:flex space-x-6 text-white font-bold text-sm">
-          <Link href="/" className="hover:underline">
+          <Link href="/courses" className="hover:underline">
             COURSES
           </Link>
           <Link href="/" className="hover:underline">
@@ -108,7 +108,7 @@ const Navbar = () => {
       >
         <div className="flex flex-col px-4 py-2 space-y-3 text-white font-bold text-sm">
           <Link
-            href="/"
+            href="/courses"
             className="hover:underline py-1 transform transition-transform duration-200 hover:translate-x-1"
             onClick={() => {
               setIsOpen(false);
