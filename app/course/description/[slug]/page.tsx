@@ -2,13 +2,14 @@ import fetchSubjects from "@/app/Data/fetchsubjects";
 import Link from "next/link";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 
-type PageProps = {
+// Update the type to match Next.js expectations
+type Props = {
   params: {
     slug: string;
   };
 };
 
-export default async function SubjectPage({ params }: PageProps) {
+export default async function SubjectPage({ params }: Props) {
   const { slug } = params;
 
   const subjects = await fetchSubjects();
