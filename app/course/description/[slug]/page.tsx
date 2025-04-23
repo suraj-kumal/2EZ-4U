@@ -1,9 +1,17 @@
-import { PageProps } from "next";
 import fetchSubjects from "@/app/Data/fetchsubjects";
 import Link from "next/link";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 
-export default async function SubjectPage({ params }: PageProps) {
+// Avoid using any types and let Next.js infer everything
+export default function Page(props: any) {
+  return <Content {...props} />;
+}
+
+// Create a separate omponent that handles the async operations
+async function Content(props: any) {
+  // Handle the params in whatever form they come
+  const params =
+    props.params instanceof Promise ? await props.params : props.params;
   const slug = params.slug;
 
   const subjects = await fetchSubjects();
