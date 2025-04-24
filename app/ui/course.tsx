@@ -27,7 +27,7 @@ const Course = async () => {
             },
             index: number
           ) => (
-            <Link
+            <a
               href={`/course/description/${item.slug}`}
               key={index}
               draggable="false"
@@ -45,7 +45,7 @@ const Course = async () => {
                   <h2 className="font-bold text-xs">{item.title}</h2>
                 </div>
               </div>
-            </Link>
+            </a>
           )
         )}
       </div>

@@ -2,14 +2,11 @@ import fetchSubjects from "@/app/Data/fetchsubjects";
 import Link from "next/link";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 
-// Avoid using any types and let Next.js infer everything
 export default function Page(props: any) {
   return <Content {...props} />;
 }
 
-// Create a separate omponent that handles the async operations
 async function Content(props: any) {
-  // Handle the params in whatever form they come
   const params =
     props.params instanceof Promise ? await props.params : props.params;
   const slug = params.slug;
@@ -20,7 +17,7 @@ async function Content(props: any) {
   if (!subject) return <div>Subject not found</div>;
 
   return (
-    <div className="px-4 py-4 sm:py-12 sm:px-12">
+    <div className="px-8 py-8 sm:py-12 sm:px-12">
       <div className="w-full flex justify-center items-center mx-0 my-4 sm:mx-12 sm:my-12">
         <Link
           href={`/course/${slug}`}
