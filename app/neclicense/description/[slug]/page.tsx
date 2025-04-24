@@ -2,32 +2,25 @@ import fetchSubjects from "@/app/neclicense/data/fetchSubjects";
 import Link from "next/link";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 
-interface Subject {
-  logo: string;
-  title: string;
-  slug: string;
-  description: string;
+export default function Page(props: any) {
+  return <Content {...props} />;
 }
 
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
+async function Content(props: any) {
+  const params =
+    props.params instanceof Promise ? await props.params : props.params;
+  const slug = params.slug;
 
-export default async function Page({ params }: PageProps) {
-  const { slug } = params;
   const subjects = await fetchSubjects();
-  const subject = subjects.find((s: Subject) => s.slug === slug);
+  const subject = subjects.find((s: { slug: string }) => s.slug === slug);
 
   if (!subject) return <div>Subject not found</div>;
 
   return (
-    <div className="px-4 py-4 sm:py-12 sm:px-12">
-      {/* Your component JSX */}
+    <div className="px-8 py-8 sm:py-12 sm:px-12">
       <div className="w-full flex justify-center items-center mx-0 my-4 sm:mx-12 sm:my-12">
         <Link
-          href={`/course/${params.slug}`}
+          href={`/course/${slug}`}
           className="group flex justify-center items-center gap-2 px-5 py-3 mt-6 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
         >
           Dive Into {subject.title}
