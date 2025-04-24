@@ -80,7 +80,7 @@ const Navbar = () => {
           <Link href="/courses" className="hover:underline">
             COURSES
           </Link>
-          <Link href="/" className="hover:underline">
+          <Link href="/neclicense" className="hover:underline">
             NEC LICENSE
           </Link>
           <Link href="/" className="hover:underline">
@@ -117,7 +117,7 @@ const Navbar = () => {
             COURSES
           </Link>
           <Link
-            href="/"
+            href="/neclicense"
             className="hover:underline py-1 transform transition-transform duration-200 hover:translate-x-1"
             onClick={() => {
               setIsOpen(false);

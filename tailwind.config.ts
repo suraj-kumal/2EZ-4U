@@ -18,6 +18,9 @@ const config: Config = {
           600: "#2F6FEB",
         },
       },
+      height: {
+        "48vh": "48vh",
+      },
     },
     keyframes: {
       shimmer: {

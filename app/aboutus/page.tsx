@@ -56,6 +56,7 @@ const Page = () => {
             <div className="md:w-1/2 flex justify-center md:justify-center">
               <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80">
                 <Image
+                  draggable={false}
                   src="/images/About-1.png"
                   alt="About Us"
                   fill
@@ -72,6 +73,7 @@ const Page = () => {
             <div className="md:w-1/2 flex justify-center md:justify-center items-center">
               <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80">
                 <Image
+                  draggable={false}
                   src="/images/About-3.png"
                   alt="About Us"
                   fill
@@ -146,6 +148,7 @@ const Page = () => {
             <div className="md:w-1/2 flex justify-center md:justify-center items-center h-full">
               <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80">
                 <Image
+                  draggable={false}
                   src="/images/About-2.png"
                   alt="About Us"
                   fill
