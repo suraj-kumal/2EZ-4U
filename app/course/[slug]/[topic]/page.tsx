@@ -1,17 +1,17 @@
 import React from "react";
 import fetchMaterials from "@/app/course/data/fetchMaterials";
 
-interface PageProps {
-  params: {
-    slug: string;
-    topic: string;
-  };
-}
+const page = (props: any) => {
+  return <Content {...props} />;
+};
 
-export default async function Page({ params }: PageProps) {
-  const { topic } = await params;
+export default page;
+
+const Content = async (props: any) => {
+  const params =
+    props.params instanceof Promise ? await props.params : props.params;
+  const topic = params.topic;
   const topiccontent = await fetchMaterials(topic);
-
   return (
     <>
       <div
@@ -20,4 +20,4 @@ export default async function Page({ params }: PageProps) {
       />
     </>
   );
-}
+};
