@@ -11,12 +11,14 @@ const Layout = async (props: any) => {
   const chaptersWithTopics = await fetchTopics(slug);
 
   const chapters = chaptersWithTopics.map((chapter: any) => ({
+    id: chapter.id,
     title: chapter.title,
     slug: chapter.slug,
   }));
 
   const topics = chaptersWithTopics.flatMap((chapter: any) =>
     chapter.topics.map((topic: any) => ({
+      id: topic.id,
       title: topic.title,
       slug: topic.slug,
       chapterSlug: chapter.slug,
@@ -24,9 +26,11 @@ const Layout = async (props: any) => {
   );
 
   return (
-    <div className="flex">
-      <Sidebar chapters={chapters} topics={topics} subject={slug} />
-      <main className="flex-1">{children}</main>
+    <div className="flex h-screen">
+      <div className="sidenav h-screen overflow-y-auto">
+        <Sidebar chapters={chapters} topics={topics} subject={slug} />
+      </div>
+      <main className="flex-1 h-screen overflow-y-auto">{children}</main>
     </div>
   );
 };

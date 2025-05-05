@@ -10,7 +10,6 @@ const Subjects = async () => {
       },
     });
     data = response.data;
-    console.log("api called");
     return data;
   } catch (e) {
     console.log("error fetching data :", e);

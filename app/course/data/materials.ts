@@ -13,7 +13,6 @@ const Materials = async (slug: any) => {
       }
     );
     data = response.data;
-    console.log("material api called");
     return data;
   } catch (e) {
     console.log("error fetching data :", e);

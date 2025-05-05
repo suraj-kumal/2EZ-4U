@@ -13,7 +13,6 @@ const Topics = async (slug: any) => {
       }
     );
     data = response.data;
-    console.log("topic api called");
     return data;
   } catch (e) {
     console.log("error fetching data :", e);

@@ -12,7 +12,7 @@ export default function NotFoundPage() {
         WOOFS! Page Not Found
       </h1>
       <p className="text-lg mb-6">
-        Looks like this page ran off this chasing Doggo
+        Looks like this page ran off chasing this Doggo
       </p>
       <Image
         width={500}
