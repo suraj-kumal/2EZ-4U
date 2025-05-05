@@ -2,16 +2,14 @@ import React from "react";
 import fetchTopics from "@/app/course/data/fetchTopics";
 import Sidebar from "@/app/course/ui/sidebar";
 
-export default async function Layout({
-  children,
-  params,
-}: {
-  children: React.ReactNode;
-  params: { slug: string } | Promise<{ slug: string }>;
-}) {
+const Layout = async (props: any) => {
+  const { params, children } = props;
+
   const resolvedParams = params instanceof Promise ? await params : params;
   const { slug } = resolvedParams;
+
   const chaptersWithTopics = await fetchTopics(slug);
+
   const chapters = chaptersWithTopics.map((chapter: any) => ({
     title: chapter.title,
     slug: chapter.slug,
@@ -31,4 +29,6 @@ export default async function Layout({
       <main className="flex-1">{children}</main>
     </div>
   );
-}
+};
+
+export default Layout;
