@@ -7,11 +7,11 @@ export default async function Layout({
   params,
 }: {
   children: React.ReactNode;
-  params: { slug: string };
+  params: { slug: string } | Promise<{ slug: string }>;
 }) {
-  const { slug } = await params;
+  const resolvedParams = params instanceof Promise ? await params : params;
+  const { slug } = resolvedParams;
   const chaptersWithTopics = await fetchTopics(slug);
-
   const chapters = chaptersWithTopics.map((chapter: any) => ({
     title: chapter.title,
     slug: chapter.slug,

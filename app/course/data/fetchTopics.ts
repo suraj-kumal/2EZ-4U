@@ -5,10 +5,12 @@ const fetchTopics = async (slug: any) => {
 
   return data.map((chapter: any) => {
     return {
+      id: chapter.uid,
       title: chapter.title,
       slug: chapter.slug,
       topics: chapter.topic.map((topic: any) => {
         return {
+          id: topic.uid,
           title: topic.title,
           slug: topic.slug,
         };

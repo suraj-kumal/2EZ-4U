@@ -2,12 +2,14 @@ import Link from "next/link";
 import { FC } from "react";
 
 interface Topic {
+  uid: any;
   title: string;
   slug: string;
   chapterSlug: string;
 }
 
 interface Chapter {
+  uid: any;
   title: string;
   slug: string;
 }
@@ -22,7 +24,7 @@ const Sidebar: FC<SidebarProps> = ({ chapters, topics, subject }) => {
   return (
     <div className="sidebar bg-[#d9d9d9d9] w-80 px-2 py-8">
       {chapters.map((chapter) => (
-        <div className="chapter_n_topic mx-2 my-2" key={chapter.slug}>
+        <div className="chapter_n_topic mx-2 my-2" key={chapter.uid}>
           <h3 className="px-4 py-2 cursor-pointer font-bold">
             {chapter.title}
           </h3>
@@ -30,7 +32,7 @@ const Sidebar: FC<SidebarProps> = ({ chapters, topics, subject }) => {
             {topics
               .filter((topic) => topic.chapterSlug === chapter.slug)
               .map((topic) => (
-                <li key={topic.slug} className="my-4">
+                <li key={topic.uid} className="my-4">
                   <Link
                     href={`/course/${subject}/${topic.slug}`}
                     className="py-1 cursor-pointer my-4"
