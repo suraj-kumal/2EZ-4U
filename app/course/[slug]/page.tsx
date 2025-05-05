@@ -1,23 +1,19 @@
 import { redirect, notFound } from "next/navigation";
 import fetchTopics from "@/app/course/data/fetchTopics";
 
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
+const Page = async (props: any) => {
+  const { params } = props;
 
-export default async function Page({ params }: PageProps) {
-  const { slug } = params;
-
+  const resolvedParams = params instanceof Promise ? await params : params;
+  const { slug } = resolvedParams;
   const chaptersWithTopics = await fetchTopics(slug);
 
   const firstChapter = chaptersWithTopics[0];
   const firstTopic = firstChapter?.topics[0];
-
   if (firstTopic) {
     redirect(`/course/${slug}/${firstTopic.slug}`);
   }
-
   return notFound();
-}
+};
+
+export default Page;
