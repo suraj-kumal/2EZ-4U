@@ -1,9 +1,23 @@
-"use client";
-import { useParams } from "next/navigation";
+import { redirect, notFound } from "next/navigation";
+import fetchTopics from "@/app/course/data/fetchTopics";
 
-const page = () => {
-  const { slug } = useParams();
-  return <div>{slug}</div>;
-};
+interface PageProps {
+  params: {
+    slug: string;
+  };
+}
 
-export default page;
+export default async function Page({ params }: PageProps) {
+  const { slug } = params;
+
+  const chaptersWithTopics = await fetchTopics(slug);
+
+  const firstChapter = chaptersWithTopics[0];
+  const firstTopic = firstChapter?.topics[0];
+
+  if (firstTopic) {
+    redirect(`/course/${slug}/${firstTopic.slug}`);
+  }
+
+  return notFound();
+}
