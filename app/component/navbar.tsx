@@ -102,7 +102,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation Menu with Animation */}
       <div
-        className={`md:hidden fixed z-1000 w-full bg-[#1675ab] overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`md:hidden absolute z-50 w-full bg-[#1675ab] overflow-hidden transition-all duration-300 ease-in-out ${
           isOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
