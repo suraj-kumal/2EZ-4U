@@ -60,7 +60,7 @@ const Sidebar: FC<SidebarProps> = ({ chapters, topics, subject }) => {
     <>
       <div
         className={`
-        fixed md:static top-18 left-0 h-[calc(100vh-5rem)] w-80
+        fixed md:static top-18 left-0 h-[calc(100vh-0.1rem)] w-80
         ${
           isMobileView
             ? `transform transition-transform duration-300 ease-in-out z-40
