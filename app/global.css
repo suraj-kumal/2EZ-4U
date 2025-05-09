@@ -29,3 +29,16 @@ body::-webkit-scrollbar {
     scrollbar-width: none; /* Firefox */
   }
 }
+
+td {
+  border: solid grey;
+}
+tr {
+  border: solid grey;
+}
+ul {
+  margin: 1rem;
+}
+hr {
+  display: none;
+}

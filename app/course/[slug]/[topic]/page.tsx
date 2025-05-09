@@ -1,7 +1,7 @@
 import React from "react";
 import fetchMaterials from "@/app/course/data/fetchMaterials";
 import { JSDOM } from "jsdom";
-
+import styles from "@/app/course/[slug]/[topic]/content.module.css";
 function stripInlineStyles(html: any) {
   const dom = new JSDOM(html);
   const document = dom.window.document;
@@ -36,12 +36,9 @@ const Content = async (props: any) => {
   return (
     <>
       <div
-        className="prose max-w-none px-8 py-8 
-             [&>p]:mb-6 [&>ul]:mb-6 [&>ol]:mb-6 
-             [&>p:last-child]:mb-0 [&>ul:last-child]:mb-0 [&>ol:last-child]:mb-0
-             [&>table]:mb-6 [&>table:last-child]:mb-0 [&>table]:border-collapse
-             [&>table>tbody>tr]:border-b [&>table>tbody>tr]:border-solid [&>table>tbody>tr]:border-gray-300
-             [&>table>tbody>tr>td]:border [&>table>tbody>tr>td]:border-solid [&>table>tbody>tr>td]:border-gray-300 [&>table>tbody>tr>td]:p-2"
+        className={`${styles.container}prose max-w-none px-8 py-8 
+    [&>p]:mb-6 [&>ul]:mb-6 [&>ol]:mb-6 
+    [&>p:last-child]:mb-0 [&>ul:last-child]:mb-0 [&>ol:last-child]:mb-0`}
         dangerouslySetInnerHTML={{ __html: cleanedHtml }}
       />
     </>
