@@ -63,15 +63,18 @@ const Content = async (props: any) => {
   const title = topiccontent.title;
   return (
     <>
-      <h1 className="font-bold text-2xl underline underline-offset-2 text-center my-8">
+      <h1 className="font-bold px-8 text-2xl underline underline-offset-2 text-center my-4">
         {title}
       </h1>
-      <div
-        className="prose max-w-none px-8 py-8 content
+      <div className="flex">
+        <div></div>
+        <div
+          className="prose max-w-none px-4 py-8 md:px-16 content
     [&>p]:mb-6 [&>ul]:mb-6 [&>ol]:mb-6
     [&>p:last-child]:mb-0 [&>ul:last-child]:mb-0 [&>ol:last-child]:mb-0"
-        dangerouslySetInnerHTML={{ __html: cleanedHtml }}
-      />
+          dangerouslySetInnerHTML={{ __html: cleanedHtml }}
+        />
+      </div>
     </>
   );
 };

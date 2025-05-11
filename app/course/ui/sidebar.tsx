@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FC, useState, useEffect, Key } from "react";
-import { FiChevronRight, FiX } from "react-icons/fi";
+import { TbLayoutSidebarLeftExpandFilled } from "react-icons/tb";
+import { FiX } from "react-icons/fi";
 
 interface Topic {
   id: Key | null | undefined;
@@ -72,13 +73,13 @@ const Sidebar: FC<SidebarProps> = ({ chapters, topics, subject }) => {
         {isMobileView && (
           <button
             onClick={toggleSidebar}
+            style={{ color: "#333333" }}
             className={`
-              absolute -right-8 top-0 p-1 bg-[#d9d9d9] rounded-r-md
-              shadow-md z-50 border-l border-gray-400
+              absolute -right-8 top-0 p-0 rounded-r-md
               ${isMobileOpen ? "hidden" : ""}
             `}
           >
-            <FiChevronRight className="text-black" size={24} />
+            <TbLayoutSidebarLeftExpandFilled size={32} />
           </button>
         )}
         {isMobileView && isMobileOpen && (
@@ -111,10 +112,27 @@ const Sidebar: FC<SidebarProps> = ({ chapters, topics, subject }) => {
                               ? "text-[#1675ab] font-semibold text-pretty"
                               : "text-black"
                           }`}
-                          onClick={() => isMobileView && setIsMobileOpen(false)}
+                          onClick={() => {
+                            if (isMobileView) {
+                              setIsMobileOpen(false);
+                            }
+                            // Scroll to the top of the page
+                            window.scrollTo({ top: 0, behavior: "smooth" });
+                          }}
                         >
                           {topic.title}
                         </Link>
+                        {/* <Link
+                          href={topicPath}
+                          className={`py-1 cursor-pointer my-4 ${
+                            isActive
+                              ? "text-[#1675ab] font-semibold text-pretty"
+                              : "text-black"
+                          }`}
+                          onClick={() => isMobileView && setIsMobileOpen(false)}
+                        >
+                          {topic.title}
+                        </Link> */}
                       </li>
                     );
                   })}
