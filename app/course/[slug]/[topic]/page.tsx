@@ -1,31 +1,49 @@
 import "@/app/course/[slug]/[topic]/content.css";
 import fetchMaterials from "@/app/course/data/fetchMaterials";
-import { JSDOM } from "jsdom";
-
+//import { JSDOM } from "jsdom";
 export const revalidate = 600;
 
-function stripInlineStyles(html: string) {
-  const dom = new JSDOM(html);
-  const document = dom.window.document;
+// function stripInlineStyles(html: string) {
+//   const dom = new JSDOM(html);
+//   const document = dom.window.document;
+
+//   // Remove inline styles
+//   const elementsWithStyle = document.querySelectorAll("*[style]");
+//   elementsWithStyle.forEach((element) => {
+//     element.removeAttribute("style");
+//   });
+
+//   // Remove empty <li> and those with only &nbsp;
+//   const listItems = document.querySelectorAll("li");
+//   listItems.forEach((li) => {
+//     const content = li.innerHTML.replace(/\u00A0|&nbsp;/g, "").trim();
+//     if (!content) {
+//       li.remove();
+//     }
+//   });
+
+//   return document.body.innerHTML;
+// }
+function stripInlineStyles(html: any) {
+  const cheerio = require("cheerio");
+  const $ = cheerio.load(html);
 
   // Remove inline styles
-  const elementsWithStyle = document.querySelectorAll("*[style]");
-  elementsWithStyle.forEach((element) => {
-    element.removeAttribute("style");
-  });
+  $("*[style]").removeAttr("style");
 
   // Remove empty <li> and those with only &nbsp;
-  const listItems = document.querySelectorAll("li");
-  listItems.forEach((li) => {
-    const content = li.innerHTML.replace(/\u00A0|&nbsp;/g, "").trim();
+  $("li").each((i: any, el: any) => {
+    const content = $(el)
+      .html()
+      .replace(/\u00A0|&nbsp;/g, "")
+      .trim();
     if (!content) {
-      li.remove();
+      $(el).remove();
     }
   });
 
-  return document.body.innerHTML;
+  return $("body").html();
 }
-
 const page = (props: any) => {
   return <Content {...props} />;
 };

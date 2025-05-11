@@ -1,24 +1,35 @@
 import fetchSubjects from "@/app/Data/fetchsubjects";
 import Link from "next/link";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
-import { JSDOM } from "jsdom";
+//import { JSDOM } from "jsdom";
 import "@/app/course/description/[slug]/desc.css";
 
 export const revalidate = 600;
 
+// function stripInlineStyles(html: any) {
+//   const dom = new JSDOM(html);
+//   const document = dom.window.document;
+
+//   const elementsWithStyle = document.querySelectorAll("*[style]");
+
+//   elementsWithStyle.forEach(
+//     (element: { removeAttribute: (arg0: string) => void }) => {
+//       element.removeAttribute("style");
+//     }
+//   );
+
+//   return document.body.innerHTML;
+// }
+
+
 function stripInlineStyles(html: any) {
-  const dom = new JSDOM(html);
-  const document = dom.window.document;
-
-  const elementsWithStyle = document.querySelectorAll("*[style]");
-
-  elementsWithStyle.forEach(
-    (element: { removeAttribute: (arg0: string) => void }) => {
-      element.removeAttribute("style");
-    }
-  );
-
-  return document.body.innerHTML;
+  const cheerio = require('cheerio');
+  const $ = cheerio.load(html);
+  
+  // Remove inline styles
+  $('*[style]').removeAttr('style');
+  
+  return $('body').html();
 }
 
 export default function Page(props: any) {
