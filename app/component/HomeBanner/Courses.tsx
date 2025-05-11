@@ -5,9 +5,10 @@ const Courses = () => {
   return (
     <>
       <div className="relative bg-[#6AAAD0] w-full px-8 py-8">
-        <h1 className="title text-center text-3xl font-bold mx-8 my-8">
+        <h1 className="text-black text-center text-3xl font-bold mx-8 my-8 underline underline-offset-4">
           Courses
         </h1>
+
         <div className="relative z-10">
           <Course />
         </div>

@@ -60,7 +60,7 @@ const Sidebar: FC<SidebarProps> = ({ chapters, topics, subject }) => {
     <>
       <div
         className={`
-        fixed md:static top-18 left-0 h-[calc(100vh-0.1rem)] w-80
+        fixed md:static top-18 left-0 h-[calc(100vh-0.001rem)] w-80
         ${
           isMobileView
             ? `transform transition-transform duration-300 ease-in-out z-40
@@ -95,7 +95,7 @@ const Sidebar: FC<SidebarProps> = ({ chapters, topics, subject }) => {
               <h3 className="px-4 py-2 cursor-pointer font-bold">
                 {chapter.title}
               </h3>
-              <ul className="pl-6 pb-3">
+              <ul className="pl-3 pb-3">
                 {topics
                   .filter((topic) => topic.chapterSlug === chapter.slug)
                   .map((topic) => {

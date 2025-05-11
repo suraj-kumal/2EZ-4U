@@ -6,7 +6,9 @@ const HomeYoutube = () => {
 
   return (
     <div className="bg-[#6AAAD0] h-full px-8 py-8">
-      <h1 className="text-2xl font-bold text-center mb-8">Playlists</h1>
+      <h1 className="text-2xl font-bold text-center mb-8 underline underline-offset-4">
+        Playlists
+      </h1>
       <div className="flex flex-col items-center justify-center gap-2 mx-4 my-4 lg:grid lg:grid-cols-4">
         {playlists.map((playlist, index) => (
           <Link href={playlist.url} key={index} target="_blank">
