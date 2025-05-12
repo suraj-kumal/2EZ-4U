@@ -1,4 +1,5 @@
 import Course from "@/app/courses/ui/course";
+export const revalidate = 600;
 const page = () => {
   return (
     <>
