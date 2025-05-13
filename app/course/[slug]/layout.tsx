@@ -6,14 +6,14 @@ export const metadata = {
   title: "EasyExplanation",
   icons: {
     icon: [
-      { url: "faviconico/favicon.ico", type: "image/x-icon" },
+      { url: "/faviconico/favicon.ico", type: "image/x-icon" },
       {
-        url: "faviconico/favicon-32x32.png",
+        url: "/faviconico/favicon-32x32.png",
         sizes: "32x32",
         type: "image/png",
       },
       {
-        url: "faviconico/favicon-16x16.png",
+        url: "/faviconico/favicon-16x16.png",
         sizes: "16x16",
         type: "image/png",
       },
