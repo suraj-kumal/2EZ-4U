@@ -41,3 +41,16 @@
 .content p {
   font-size: 17px;
 }
+@media only screen and (max-width: 640px) {
+  .content {
+    width: 95vw;
+    overflow: hidden;
+    text-align: justify;
+  }
+  .content pre {
+    overflow-x: auto;
+  }
+  .content ul {
+    margin: 0.5rem;
+  }
+}

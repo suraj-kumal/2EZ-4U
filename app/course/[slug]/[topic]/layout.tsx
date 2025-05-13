@@ -10,8 +10,8 @@ type PageProps = {
 };
 
 export async function generateMetadata(props: any): Promise<Metadata> {
-  const { params } = props;
-  const { topic } = params;
+  const { params } = await props;
+  const { topic } = await params;
 
   try {
     const topicContent = await fetchMaterials(topic);
