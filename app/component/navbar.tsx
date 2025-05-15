@@ -83,7 +83,7 @@ const Navbar = () => {
           <Link href="/neclicense" className="hover:underline">
             NEC LICENSE
           </Link>
-          <Link href="/" className="hover:underline">
+          <Link href="/" className="hover:underline hidden">
             BLOG
           </Link>
           <Link href="/aboutus" className="hover:underline">
@@ -127,7 +127,7 @@ const Navbar = () => {
           </Link>
           <Link
             href="/"
-            className="hover:underline py-1 transform transition-transform duration-200 hover:translate-x-1"
+            className="hover:underline py-1 transform transition-transform duration-200 hover:translate-x-1 hidden"
             onClick={() => {
               setIsOpen(false);
             }}

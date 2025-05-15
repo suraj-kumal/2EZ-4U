@@ -2,7 +2,16 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FC, useState, useEffect, Key, JSXElementConstructor, ReactElement, ReactNode, ReactPortal } from "react";
+import {
+  FC,
+  useState,
+  useEffect,
+  Key,
+  JSXElementConstructor,
+  ReactElement,
+  ReactNode,
+  ReactPortal,
+} from "react";
 import { TbLayoutSidebarLeftExpandFilled } from "react-icons/tb";
 import { FiX } from "react-icons/fi";
 
@@ -91,38 +100,59 @@ const Sidebar: FC<SidebarProps> = ({ chapters, topics, subject }) => {
           </button>
         )}
         <div className="sidebar bg-[#d3d3d3] w-full h-full px-2 py-4 overflow-y-auto">
-          {chapters.map((chapter: { title: boolean | Key | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined; slug: string; }) => (
-            <div className="chapter_n_topic mx-2 my-2" key={chapter.title}>
-              <h3 className="px-4 py-2 cursor-pointer font-bold">
-                {chapter.title}
-              </h3>
-              <ul className="pl-3 pb-3">
-                {topics
-                  .filter((topic) => topic.chapterSlug === chapter.slug)
-                  .map((topic) => {
-                    const topicPath = `/course/${subject}/${topic.slug}`;
-                    const isActive = pathname === topicPath;
+          {chapters.map(
+            (chapter: {
+              title:
+                | boolean
+                | Key
+                | ReactElement<unknown, string | JSXElementConstructor<any>>
+                | Iterable<ReactNode>
+                | Promise<
+                    | string
+                    | number
+                    | bigint
+                    | boolean
+                    | ReactPortal
+                    | ReactElement<unknown, string | JSXElementConstructor<any>>
+                    | Iterable<ReactNode>
+                    | null
+                    | undefined
+                  >
+                | null
+                | undefined;
+              slug: string;
+            }) => (
+              <div className="chapter_n_topic mx-2 my-2" key={chapter.title}>
+                <h3 className="px-4 py-2 cursor-pointer font-bold">
+                  {chapter.title}
+                </h3>
+                <ul className="pl-3 pb-3">
+                  {topics
+                    .filter((topic) => topic.chapterSlug === chapter.slug)
+                    .map((topic) => {
+                      const topicPath = `/neclicense/${subject}/${topic.slug}`;
+                      const isActive = pathname === topicPath;
 
-                    return (
-                      <li key={topic.title} className="my-4">
-                        <Link
-                          href={topicPath}
-                          className={`py-1 cursor-pointer my-4 ${
-                            isActive
-                              ? "text-[#1675ab] font-semibold text-pretty"
-                              : "text-black"
-                          }`}
-                          onClick={() => {
-                            if (isMobileView) {
-                              setIsMobileOpen(false);
-                            }
-                            // Scroll to the top of the page
-                            window.scrollTo({ top: 0, behavior: "smooth" });
-                          }}
-                        >
-                          {topic.title}
-                        </Link>
-                        {/* <Link
+                      return (
+                        <li key={topic.title} className="my-4">
+                          <Link
+                            href={topicPath}
+                            className={`py-1 cursor-pointer my-4 ${
+                              isActive
+                                ? "text-[#1675ab] font-semibold text-pretty"
+                                : "text-black"
+                            }`}
+                            onClick={() => {
+                              if (isMobileView) {
+                                setIsMobileOpen(false);
+                              }
+                              // Scroll to the top of the page
+                              window.scrollTo({ top: 0, behavior: "smooth" });
+                            }}
+                          >
+                            {topic.title}
+                          </Link>
+                          {/* <Link
                           href={topicPath}
                           className={`py-1 cursor-pointer my-4 ${
                             isActive
@@ -133,13 +163,14 @@ const Sidebar: FC<SidebarProps> = ({ chapters, topics, subject }) => {
                         >
                           {topic.title}
                         </Link> */}
-                      </li>
-                    );
-                  })}
-              </ul>
-              <div className="border-t border-black mx-4 my-2"></div>
-            </div>
-          ))}
+                        </li>
+                      );
+                    })}
+                </ul>
+                <div className="border-t border-black mx-4 my-2"></div>
+              </div>
+            )
+          )}
         </div>
       </div>
       {isMobileView && isMobileOpen && (

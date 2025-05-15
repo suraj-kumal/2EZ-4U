@@ -21,7 +21,7 @@ export async function generateMetadata({
   const pageDescription =
     course.meta_description || "Learn more about this course";
   const pageKeywords = course.keywords || "course, learning, education";
-  const canonicalUrl = `https://ezexplanation.com/course/${slug}`;
+  const canonicalUrl = `https://ezexplanation.com/course/description/${slug}`;
   const ogImageUrl =
     "https://ezexplanation.com/images/default-course-image.jpg";
 
@@ -103,7 +103,7 @@ const Layout = async (props: LayoutProps) => {
                 url: "https://ezexplanation.com/logo.png",
               },
             },
-            url: `https://ezexplanation.com/course/${slug}`,
+            url: `https://ezexplanation.com/course/description/${slug}`,
             keywords: course.keywords
               ?.split(",")
               .map((keyword: string) => keyword.trim()),
