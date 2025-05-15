@@ -102,6 +102,7 @@ const Sidebar: FC<SidebarProps> = ({ chapters, topics, subject }) => {
         <div className="sidebar bg-[#d3d3d3] w-full h-full px-2 py-4 overflow-y-auto">
           {chapters.map(
             (chapter: {
+              id: Key | null | undefined;
               title:
                 | boolean
                 | Key
@@ -122,7 +123,7 @@ const Sidebar: FC<SidebarProps> = ({ chapters, topics, subject }) => {
                 | undefined;
               slug: string;
             }) => (
-              <div className="chapter_n_topic mx-2 my-2" key={chapter.title}>
+              <div className="chapter_n_topic mx-2 my-2" key={chapter.id}>
                 <h3 className="px-4 py-2 cursor-pointer font-bold">
                   {chapter.title}
                 </h3>
