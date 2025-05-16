@@ -21,6 +21,11 @@ const Navbar = () => {
     return false;
   };
 
+  // Custom CSS for the navbar links
+  const navLinkStyles = "relative";
+  const activeIndicatorStyles =
+    "absolute left-0 right-0 bottom-0 h-0.5 bg-white transform transition-all duration-300 ease-in-out";
+
   useEffect(() => {
     const handleScroll = () => {
       if (isOpen) setIsOpen(false);
@@ -89,45 +94,45 @@ const Navbar = () => {
 
         {/* Desktop Navigation Links */}
         <div className="hidden md:flex space-x-6 text-white font-bold text-sm">
-          <Link
-            href="/courses"
-            className={`${
-              isLinkActive("/courses")
-                ? "underline underline-offset-8 decoration-4"
-                : ""
-            }`}
-          >
-            COURSES
+          <Link href="/courses" className={`${navLinkStyles}`}>
+            <span>COURSES</span>
+            <div
+              className={`${activeIndicatorStyles} ${
+                isLinkActive("/courses")
+                  ? "scale-x-100 opacity-100"
+                  : "scale-x-0 opacity-0"
+              }`}
+            ></div>
           </Link>
-          <Link
-            href="/neclicense"
-            className={`${
-              isLinkActive("/neclicense")
-                ? "underline underline-offset-8 decoration-4"
-                : ""
-            }`}
-          >
-            NEC LICENSE
+          <Link href="/neclicense" className={`${navLinkStyles}`}>
+            <span>NEC LICENSE</span>
+            <div
+              className={`${activeIndicatorStyles} ${
+                isLinkActive("/neclicense")
+                  ? "scale-x-100 opacity-100"
+                  : "scale-x-0 opacity-0"
+              }`}
+            ></div>
           </Link>
-          <Link
-            href="/"
-            className={`${
-              isLinkActive("/blog")
-                ? "underline underline-offset-8 decoration-4"
-                : ""
-            } hidden`}
-          >
-            BLOG
+          <Link href="/" className={`${navLinkStyles} hidden`}>
+            <span>BLOG</span>
+            <div
+              className={`${activeIndicatorStyles} ${
+                isLinkActive("/blog")
+                  ? "scale-x-100 opacity-100"
+                  : "scale-x-0 opacity-0"
+              }`}
+            ></div>
           </Link>
-          <Link
-            href="/aboutus"
-            className={`${
-              isLinkActive("/aboutus")
-                ? "underline underline-offset-8 decoration-4"
-                : ""
-            }`}
-          >
-            ABOUT US
+          <Link href="/aboutus" className={`${navLinkStyles}`}>
+            <span>ABOUT US</span>
+            <div
+              className={`${activeIndicatorStyles} ${
+                isLinkActive("/aboutus")
+                  ? "scale-x-100 opacity-100"
+                  : "scale-x-0 opacity-0"
+              }`}
+            ></div>
           </Link>
           <a
             href="https://www.youtube.com/@easyexplanation9220"
@@ -149,47 +154,67 @@ const Navbar = () => {
         <div className="flex flex-col px-4 py-2 space-y-3 text-white font-bold text-sm">
           <Link
             href="/courses"
-            className={`${
-              isLinkActive("/courses") ? "underline underline-offset-8" : ""
-            } py-1 transform transition-transform duration-200 hover:translate-x-1`}
+            className={`${navLinkStyles} py-1 transform transition-transform duration-300 hover:translate-x-1`}
             onClick={() => {
               setIsOpen(false);
             }}
           >
-            COURSES
+            <span>COURSES</span>
+            <div
+              className={`${activeIndicatorStyles} ${
+                isLinkActive("/courses")
+                  ? "scale-x-100 opacity-100"
+                  : "scale-x-0 opacity-0"
+              }`}
+            ></div>
           </Link>
           <Link
             href="/neclicense"
-            className={`${
-              isLinkActive("/neclicense") ? "underline underline-offset-8" : ""
-            } py-1 transform transition-transform duration-200 hover:translate-x-1`}
+            className={`${navLinkStyles} py-1 transform transition-transform duration-300 hover:translate-x-1`}
             onClick={() => {
               setIsOpen(false);
             }}
           >
-            NEC LICENSE
+            <span>NEC LICENSE</span>
+            <div
+              className={`${activeIndicatorStyles} ${
+                isLinkActive("/neclicense")
+                  ? "scale-x-100 opacity-100"
+                  : "scale-x-0 opacity-0"
+              }`}
+            ></div>
           </Link>
           <Link
             href="/"
-            className={`${
-              isLinkActive("/blog") ? "underline underline-offset-8" : ""
-            } py-1 transform transition-transform duration-200 hover:translate-x-1 hidden`}
+            className={`${navLinkStyles} py-1 transform transition-transform duration-300 hover:translate-x-1 hidden`}
             onClick={() => {
               setIsOpen(false);
             }}
           >
-            BLOG
+            <span>BLOG</span>
+            <div
+              className={`${activeIndicatorStyles} ${
+                isLinkActive("/blog")
+                  ? "scale-x-100 opacity-100"
+                  : "scale-x-0 opacity-0"
+              }`}
+            ></div>
           </Link>
           <Link
             href="/aboutus"
-            className={`${
-              isLinkActive("/aboutus") ? "underline underline-offset-8" : ""
-            } py-1 transform transition-transform duration-200 hover:translate-x-1`}
+            className={`${navLinkStyles} py-1 transform transition-transform duration-300 hover:translate-x-1`}
             onClick={() => {
               setIsOpen(false);
             }}
           >
-            ABOUT US
+            <span>ABOUT US</span>
+            <div
+              className={`${activeIndicatorStyles} ${
+                isLinkActive("/aboutus")
+                  ? "scale-x-100 opacity-100"
+                  : "scale-x-0 opacity-0"
+              }`}
+            ></div>
           </Link>
           <a
             href="https://www.youtube.com/@easyexplanation9220"
