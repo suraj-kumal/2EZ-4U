@@ -23,8 +23,10 @@ const Navbar = () => {
 
   // Custom CSS for the navbar links
   const navLinkStyles = "relative";
-  const activeIndicatorStyles =
+  const desktopIndicatorStyles =
     "absolute left-0 right-0 bottom-0 h-0.5 bg-white transform transition-all duration-300 ease-in-out";
+  const mobileIndicatorStyles =
+    "absolute left-0 w-full bottom-0 h-0.5 bg-white transform transition-all duration-300 ease-in-out";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -97,7 +99,7 @@ const Navbar = () => {
           <Link href="/courses" className={`${navLinkStyles}`}>
             <span>COURSES</span>
             <div
-              className={`${activeIndicatorStyles} ${
+              className={`${desktopIndicatorStyles} ${
                 isLinkActive("/courses")
                   ? "scale-x-100 opacity-100"
                   : "scale-x-0 opacity-0"
@@ -107,7 +109,7 @@ const Navbar = () => {
           <Link href="/neclicense" className={`${navLinkStyles}`}>
             <span>NEC LICENSE</span>
             <div
-              className={`${activeIndicatorStyles} ${
+              className={`${desktopIndicatorStyles} ${
                 isLinkActive("/neclicense")
                   ? "scale-x-100 opacity-100"
                   : "scale-x-0 opacity-0"
@@ -117,7 +119,7 @@ const Navbar = () => {
           <Link href="/" className={`${navLinkStyles} hidden`}>
             <span>BLOG</span>
             <div
-              className={`${activeIndicatorStyles} ${
+              className={`${desktopIndicatorStyles} ${
                 isLinkActive("/blog")
                   ? "scale-x-100 opacity-100"
                   : "scale-x-0 opacity-0"
@@ -127,7 +129,7 @@ const Navbar = () => {
           <Link href="/aboutus" className={`${navLinkStyles}`}>
             <span>ABOUT US</span>
             <div
-              className={`${activeIndicatorStyles} ${
+              className={`${desktopIndicatorStyles} ${
                 isLinkActive("/aboutus")
                   ? "scale-x-100 opacity-100"
                   : "scale-x-0 opacity-0"
@@ -154,14 +156,14 @@ const Navbar = () => {
         <div className="flex flex-col px-4 py-2 space-y-3 text-white font-bold text-sm">
           <Link
             href="/courses"
-            className={`${navLinkStyles} py-1 transform transition-transform duration-300 hover:translate-x-1`}
+            className={`${navLinkStyles} w-fit py-1 transform transition-transform duration-200 hover:translate-x-1`}
             onClick={() => {
               setIsOpen(false);
             }}
           >
             <span>COURSES</span>
             <div
-              className={`${activeIndicatorStyles} ${
+              className={`${mobileIndicatorStyles} ${
                 isLinkActive("/courses")
                   ? "scale-x-100 opacity-100"
                   : "scale-x-0 opacity-0"
@@ -170,14 +172,14 @@ const Navbar = () => {
           </Link>
           <Link
             href="/neclicense"
-            className={`${navLinkStyles} py-1 transform transition-transform duration-300 hover:translate-x-1`}
+            className={`${navLinkStyles} w-fit py-1 transform transition-transform duration-200 hover:translate-x-1`}
             onClick={() => {
               setIsOpen(false);
             }}
           >
             <span>NEC LICENSE</span>
             <div
-              className={`${activeIndicatorStyles} ${
+              className={`${mobileIndicatorStyles} ${
                 isLinkActive("/neclicense")
                   ? "scale-x-100 opacity-100"
                   : "scale-x-0 opacity-0"
@@ -186,14 +188,14 @@ const Navbar = () => {
           </Link>
           <Link
             href="/"
-            className={`${navLinkStyles} py-1 transform transition-transform duration-300 hover:translate-x-1 hidden`}
+            className={`${navLinkStyles} w-fit py-1 transform transition-transform duration-200 hover:translate-x-1 hidden`}
             onClick={() => {
               setIsOpen(false);
             }}
           >
             <span>BLOG</span>
             <div
-              className={`${activeIndicatorStyles} ${
+              className={`${mobileIndicatorStyles} ${
                 isLinkActive("/blog")
                   ? "scale-x-100 opacity-100"
                   : "scale-x-0 opacity-0"
@@ -202,14 +204,14 @@ const Navbar = () => {
           </Link>
           <Link
             href="/aboutus"
-            className={`${navLinkStyles} py-1 transform transition-transform duration-300 hover:translate-x-1`}
+            className={`${navLinkStyles} w-fit py-1 transform transition-transform duration-200 hover:translate-x-1`}
             onClick={() => {
               setIsOpen(false);
             }}
           >
             <span>ABOUT US</span>
             <div
-              className={`${activeIndicatorStyles} ${
+              className={`${mobileIndicatorStyles} ${
                 isLinkActive("/aboutus")
                   ? "scale-x-100 opacity-100"
                   : "scale-x-0 opacity-0"
