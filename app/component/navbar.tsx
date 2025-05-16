@@ -2,16 +2,28 @@
 import React, { useEffect, useState } from "react";
 import "@/app/global.css";
 import Link from "next/link";
-import { styleText } from "util";
+import { usePathname } from "next/navigation";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
   const [scrollY, setScrollY] = useState(0);
+  const pathname = usePathname();
+
+  // Function to check if a link is active
+  const isLinkActive = (href: string) => {
+    // Check if pathname is exactly this href
+    if (pathname === href) return true;
+
+    // For nested routes, check if pathname starts with this href
+    // But only if href is not just the root "/"
+    if (href !== "/" && pathname.startsWith(href + "/")) return true;
+
+    return false;
+  };
 
   useEffect(() => {
     const handleScroll = () => {
       if (isOpen) setIsOpen(false);
-
       setScrollY(window.scrollY);
     };
     window.addEventListener("scroll", handleScroll);
@@ -77,23 +89,51 @@ const Navbar = () => {
 
         {/* Desktop Navigation Links */}
         <div className="hidden md:flex space-x-6 text-white font-bold text-sm">
-          <Link href="/courses" className="hover:underline">
+          <Link
+            href="/courses"
+            className={`${
+              isLinkActive("/courses")
+                ? "underline underline-offset-8 decoration-4"
+                : ""
+            }`}
+          >
             COURSES
           </Link>
-          <Link href="/neclicense" className="hover:underline">
+          <Link
+            href="/neclicense"
+            className={`${
+              isLinkActive("/neclicense")
+                ? "underline underline-offset-8 decoration-4"
+                : ""
+            }`}
+          >
             NEC LICENSE
           </Link>
-          <Link href="/" className="hover:underline hidden">
+          <Link
+            href="/"
+            className={`${
+              isLinkActive("/blog")
+                ? "underline underline-offset-8 decoration-4"
+                : ""
+            } hidden`}
+          >
             BLOG
           </Link>
-          <Link href="/aboutus" className="hover:underline">
+          <Link
+            href="/aboutus"
+            className={`${
+              isLinkActive("/aboutus")
+                ? "underline underline-offset-8 decoration-4"
+                : ""
+            }`}
+          >
             ABOUT US
           </Link>
           <a
             href="https://www.youtube.com/@easyexplanation9220"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:underline"
+            className=""
           >
             YOUTUBE
           </a>
@@ -109,7 +149,9 @@ const Navbar = () => {
         <div className="flex flex-col px-4 py-2 space-y-3 text-white font-bold text-sm">
           <Link
             href="/courses"
-            className="hover:underline py-1 transform transition-transform duration-200 hover:translate-x-1"
+            className={`${
+              isLinkActive("/courses") ? "underline underline-offset-8" : ""
+            } py-1 transform transition-transform duration-200 hover:translate-x-1`}
             onClick={() => {
               setIsOpen(false);
             }}
@@ -118,7 +160,9 @@ const Navbar = () => {
           </Link>
           <Link
             href="/neclicense"
-            className="hover:underline py-1 transform transition-transform duration-200 hover:translate-x-1"
+            className={`${
+              isLinkActive("/neclicense") ? "underline underline-offset-8" : ""
+            } py-1 transform transition-transform duration-200 hover:translate-x-1`}
             onClick={() => {
               setIsOpen(false);
             }}
@@ -127,7 +171,9 @@ const Navbar = () => {
           </Link>
           <Link
             href="/"
-            className="hover:underline py-1 transform transition-transform duration-200 hover:translate-x-1 hidden"
+            className={`${
+              isLinkActive("/blog") ? "underline underline-offset-8" : ""
+            } py-1 transform transition-transform duration-200 hover:translate-x-1 hidden`}
             onClick={() => {
               setIsOpen(false);
             }}
@@ -136,7 +182,9 @@ const Navbar = () => {
           </Link>
           <Link
             href="/aboutus"
-            className="hover:underline py-1 transform transition-transform duration-200 hover:translate-x-1"
+            className={`${
+              isLinkActive("/aboutus") ? "underline underline-offset-8" : ""
+            } py-1 transform transition-transform duration-200 hover:translate-x-1`}
             onClick={() => {
               setIsOpen(false);
             }}
@@ -147,7 +195,7 @@ const Navbar = () => {
             href="https://www.youtube.com/@easyexplanation9220"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:underline py-1 transform transition-transform duration-200 hover:translate-x-1"
+            className="py-1 transform transition-transform duration-200 hover:translate-x-1"
             onClick={() => {
               setIsOpen(false);
             }}
