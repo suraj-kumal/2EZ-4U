@@ -1,17 +1,20 @@
 import axios from "axios";
 
-module.exports = {
+// Export the configuration as default export (ESM style)
+export default {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL,
   generateRobotsTxt: true,
 
+  // Add custom paths for course pages and NEC license pages
   additionalPaths: async (config) => {
     const base_url = process.env.NEXT_PUBLIC_BASE_URL;
     const token = process.env.NEXT_PUBLIC_AUTH_TOKEN;
     const sitemapEntries = [];
 
+    // Add static pages with high priority
     const staticPages = [
       {
-        loc: `/`,
+        loc: `/`, // Home page
         priority: 1.0,
       },
       {
@@ -24,9 +27,12 @@ module.exports = {
       },
     ];
 
+    // Add all static pages to sitemap entries
     sitemapEntries.push(...staticPages);
 
     try {
+      // Part 1: Handle course pages
+      // Fetch all subjects using the API
       const subjectsResponse = await axios.get(
         `${base_url}/api/list/subjects`,
         {
@@ -38,6 +44,7 @@ module.exports = {
 
       const subjects = subjectsResponse.data;
 
+      // Add subject description pages to sitemap
       subjects.forEach((subject) => {
         sitemapEntries.push({
           loc: `/course/description/${subject.slug}`,
@@ -64,7 +71,7 @@ module.exports = {
             chapter.topic.forEach((topic) => {
               sitemapEntries.push({
                 loc: `/course/${subject.slug}/${topic.slug}`,
-                priority: 1.0,
+                priority: 0.8,
               });
             });
           });
@@ -75,6 +82,9 @@ module.exports = {
           );
         }
       }
+
+      // Part 2: Handle NEC license pages
+      // Fetch all NEC license programs
       const necLicenseResponse = await axios.get(
         `${base_url}/api/nec/exam/program/list/all/`,
         {
@@ -86,13 +96,15 @@ module.exports = {
 
       const necLicenses = necLicenseResponse.data;
 
+      // Add NEC license description pages to sitemap
       necLicenses.forEach((necLicense) => {
         sitemapEntries.push({
           loc: `/neclicense/description/${necLicense.slug}`,
-          priority: 0.9,
+          priority: 0.8,
         });
       });
 
+      // For each NEC license, fetch its topics and add them to sitemap
       for (const necLicense of necLicenses) {
         try {
           const necTopicsResponse = await axios.get(
@@ -104,13 +116,16 @@ module.exports = {
             }
           );
 
+          // The data structure is an array of arrays containing topic objects
           const topicGroups = necTopicsResponse.data;
 
+          // Process each topic group (which is an array)
           topicGroups.forEach((topicGroup) => {
+            // Each topic group contains multiple topics
             topicGroup.forEach((topic) => {
               sitemapEntries.push({
                 loc: `/neclicense/${necLicense.slug}/${topic.slug}`,
-                priority: 0.9,
+                priority: 0.8,
               });
             });
           });

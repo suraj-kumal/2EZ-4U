@@ -125,7 +125,7 @@ export async function generateMetadata(props: any): Promise<Metadata> {
       return [...new Set([...baseWords, ...additionalKeywords])].join(", ");
     };
 
-    const canonicalUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/course/${slug}/${topicContent.title}`;
+    const canonicalUrl = `https://ezexplanation.vercel.app/course/${slug}/${topicContent.title}`;
     const keywords = generateKeywords(topicContent.title);
 
     return {
