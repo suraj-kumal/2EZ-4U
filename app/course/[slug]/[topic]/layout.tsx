@@ -30,7 +30,7 @@ export async function generateMetadata(props: any): Promise<Metadata> {
     const keywords = generateKeywords(topicContent.title);
 
     return {
-      title: topicContent.title,
+      title: topicContent.title + " - IOE, CSIT, BIM, BCA - Easy Explanation",
       description: `Detailed explanation of ${topicContent.title}. Learn everything you need to know about this topic.`,
       keywords: keywords,
       publisher: "Infography Technologies",
