@@ -22,8 +22,7 @@ export async function generateMetadata({
     course.meta_description || "Learn more about this course";
   const pageKeywords = course.keywords || "course, learning, education";
   const canonicalUrl = `https://ezexplanation.com/course/description/${slug}`;
-  const ogImageUrl =
-    "https://ezexplanation.com/images/default-course-image.jpg";
+  const ogImageUrl = "https://ezexplanation.vercel.com/SEOcard.png";
 
   return {
     title: pageTitle,
@@ -97,7 +96,7 @@ const Layout = async (props: LayoutProps) => {
             description: pageDescription,
             provider: {
               "@type": "Organization",
-              name: "Your Organization",
+              name: "Infography Technology",
               logo: {
                 "@type": "ImageObject",
                 url: "https://ezexplanation.com/logo.png",

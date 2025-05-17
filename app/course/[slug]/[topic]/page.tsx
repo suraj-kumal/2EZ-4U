@@ -1,5 +1,6 @@
 import "@/app/course/[slug]/[topic]/content.css";
 import fetchMaterials from "@/app/course/data/fetchMaterials";
+import fetchTopics from "@/app/course/data/fetchTopics";
 //import { JSDOM } from "jsdom";
 export const revalidate = 600;
 
@@ -33,6 +34,8 @@ const Content = async (props: any) => {
   const topic = await params.topic;
 
   const topiccontent = await fetchMaterials(topic);
+
+  
 
   const cleanedHtml = topiccontent.content
     ? stripInlineStyles(topiccontent.content)
