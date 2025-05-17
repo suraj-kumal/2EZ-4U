@@ -29,6 +29,7 @@ export async function generateMetadata({
     description: pageDescription,
     keywords: pageKeywords,
     authors: [{ name: "Infography Technology" }],
+    publisher: "Infography Technology",
     alternates: {
       canonical: canonicalUrl,
     },
