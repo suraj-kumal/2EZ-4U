@@ -22,14 +22,14 @@ export async function generateMetadata({
     course.meta_description || "Learn more about this course";
   const pageKeywords = course.keywords || "course, learning, education";
   const canonicalUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/course/description/${slug}`;
-  const ogImageUrl = "https://ezexplanation.vercel.com/SEOcard.png";
+  const ogImageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/SEOcard.png`;
 
   return {
     title: pageTitle,
     description: pageDescription,
     keywords: pageKeywords,
     authors: [{ name: "Infography Technology" }],
-    publisher: "Infography Technology",
+    publisher: "Infography Technologies",
     alternates: {
       canonical: canonicalUrl,
     },

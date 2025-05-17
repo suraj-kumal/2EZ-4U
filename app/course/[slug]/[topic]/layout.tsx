@@ -33,7 +33,7 @@ export async function generateMetadata(props: any): Promise<Metadata> {
       title: topicContent.title,
       description: `Detailed explanation of ${topicContent.title}. Learn everything you need to know about this topic.`,
       keywords: keywords,
-      publisher: "Infography Technology",
+      publisher: "Infography Technologies",
       alternates: {
         canonical: canonicalUrl,
       },
