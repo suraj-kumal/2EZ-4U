@@ -100,15 +100,15 @@
 import { Metadata } from "next";
 import fetchMaterials from "@/app/course/data/fetchMaterials";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string; topics: string };
+export async function generateMetadata(props: {
+  params: { slug: string; topic: string };
 }): Promise<Metadata> {
-  const { slug, topics } = params;
+  // Correctly await the params before using its properties
+  const { params } = props;
+  const { slug, topic } = await params; // await here to make sure params is resolved
 
   try {
-    const topicContent = await fetchMaterials(topics);
+    const topicContent = await fetchMaterials(topic);
 
     const generateKeywords = (title: string) => {
       const baseWords = title.toLowerCase().split(/\s+/);
@@ -129,7 +129,6 @@ export async function generateMetadata({
     };
 
     const canonicalUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/course/${slug}/${topicContent.title}`;
-
     const keywords = generateKeywords(topicContent.title);
 
     return {
@@ -195,6 +194,6 @@ export default function TopicLayout({
   children,
 }: {
   children: React.ReactNode;
-}) {
+}): React.ReactNode {
   return <>{children}</>;
 }
