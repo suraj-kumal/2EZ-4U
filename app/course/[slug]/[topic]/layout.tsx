@@ -100,12 +100,9 @@
 import { Metadata } from "next";
 import fetchMaterials from "@/app/course/data/fetchMaterials";
 
-export async function generateMetadata(props: {
-  params: { slug: string; topic: string };
-}): Promise<Metadata> {
-  // Correctly await the params before using its properties
+export async function generateMetadata(props: any): Promise<Metadata> {
   const { params } = props;
-  const { slug, topic } = await params; // await here to make sure params is resolved
+  const { slug, topic } = await params;
 
   try {
     const topicContent = await fetchMaterials(topic);
