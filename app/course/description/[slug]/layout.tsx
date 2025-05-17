@@ -21,7 +21,7 @@ export async function generateMetadata({
   const pageDescription =
     course.meta_description || "Learn more about this course";
   const pageKeywords = course.keywords || "course, learning, education";
-  const canonicalUrl = `https://ezexplanation.com/course/description/${slug}`;
+  const canonicalUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/course/description/${slug}`;
   const ogImageUrl = "https://ezexplanation.vercel.com/SEOcard.png";
 
   return {
