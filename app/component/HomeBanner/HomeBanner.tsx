@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ImagePriority from "next/image";
 
 const HomeBanner = () => {
   return (
@@ -55,11 +55,11 @@ const HomeBanner = () => {
       </div>
 
       <div className="bannerimage w-3/4 md:w-auto order-1 md:order-2 pt-4 md:pt-0">
-        <Image
+        <ImagePriority
           src="/banner/main.png"
           alt={"easy explanation"}
-          width={1368 / 3}
-          height={1326 / 3}
+          width={456}
+          height={442}
           className="md:w-auto"
         />
       </div>
