@@ -57,10 +57,11 @@ const HomeBanner = () => {
       <div className="bannerimage w-3/4 md:w-auto order-1 md:order-2 pt-4 md:pt-0">
         <ImagePriority
           src="/banner/main.png"
-          alt={"easy explanation"}
+          alt="easy explanation"
           width={456}
           height={442}
           className="md:w-auto"
+          loading="eager" // <-- disables lazy loading
         />
       </div>
     </div>
