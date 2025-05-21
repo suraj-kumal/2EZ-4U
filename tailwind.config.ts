@@ -20,6 +20,7 @@ const config: Config = {
       },
       height: {
         "48vh": "48vh",
+        "90vh": "90vh",
       },
     },
     keyframes: {

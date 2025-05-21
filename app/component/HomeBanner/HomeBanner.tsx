@@ -1,5 +1,6 @@
 import Image from "next/image";
-
+import { FaGraduationCap } from "react-icons/fa";
+import "./homebanner.css";
 const HomeBanner = () => {
   return (
     // <div className="py-8 md:py-12 flex justify-center items-center">
@@ -66,32 +67,69 @@ const HomeBanner = () => {
     //   </div>
     // </div>
 
-    <div className="flex flex-col md:flex-row bg-[#A8DCE0] p-4 md:p-8 justify-center items-center w-full overflow-hidden">
-      <div className="bannerimage w-full md:w-1/2 flex justify-center">
-        <Image
-          src="/banner/graduate.png"
-          alt="Easy Explanation"
-          priority={true}
-          width={2142 / 3.5}
-          height={2133 / 3.5}
-          className="max-w-[80%] md:max-w-full"
-        />
-      </div>
+    // <div className="flex flex-col md:flex-row bg-[#A8DCE0] p-4 md:p-8 justify-center items-center w-full overflow-hidden">
+    //   <div className="bannerimage w-full md:w-1/2 flex justify-center">
+    //     <Image
+    //       src="/banner/graduate.png"
+    //       alt="Easy Explanation"
+    //       priority={true}
+    //       width={2142 / 3.5}
+    //       height={2133 / 3.5}
+    //       className="max-w-[80%] md:max-w-full"
+    //     />
+    //   </div>
 
-      <div className="banner w-full md:w-1/2 px-4 md:px-0">
-        <h1 className="text-center text-[#649578] text-3xl md:text-4xl font-extrabold my-4 md:my-8">
-          <span className="text-[#78C6FD]">EASY</span>&nbsp;EXPLANATION
+    //   <div className="banner w-full md:w-1/2 px-4 md:px-0">
+    //     <h1 className="text-center text-[#649578] text-3xl md:text-4xl font-extrabold my-4 md:my-8">
+    //       <span className="text-[#78C6FD]">EASY</span>&nbsp;EXPLANATION
+    //     </h1>
+    //     <h3 className="font-bold text-xl md:text-2xl text-center my-4 md:my-8">
+    //       Study Smarter, Not Harder <br className="hidden md:block" />
+    //       Get Access to High-Quality Notes & Exam Materials{" "}
+    //       <br className="hidden md:block" />
+    //       Trusted by Students to Succeed Faster
+    //     </h3>
+    //     <div className="w-full flex justify-center items-center mt-3 md:mt-4 mb-4 md:mb-2">
+    //       <button className="bg-indigo-600 text-white px-5 py-2 md:px-4 md:py-2 text-base rounded-lg">
+    //         Get Started
+    //       </button>
+    //     </div>
+    //   </div>
+    // </div>
+
+    <div className="block justify-center items-center gap-0 w-screen overflow-hidden md:flex">
+      <div className="startbanner w-screen p-4 md:w-1/4 md:px-8">
+        <h1 className="font-extrabold text-4xl text-start mb-4">
+          <FaGraduationCap />
+          Your <br /> Success <br /> Start Here
         </h1>
-        <h3 className="font-bold text-xl md:text-2xl text-center my-4 md:my-8">
-          Study Smarter, Not Harder <br className="hidden md:block" />
-          Get Access to High-Quality Notes & Exam Materials{" "}
-          <br className="hidden md:block" />
-          Trusted by Students to Succeed Faster
-        </h3>
-        <div className="w-full flex justify-center items-center mt-3 md:mt-4 mb-4 md:mb-2">
-          <button className="bg-indigo-600 text-white px-5 py-2 md:px-4 md:py-2 text-base rounded-lg">
-            Get Started
-          </button>
+        <p>
+          Get easy-to-understand notes, past papers, and exam prep tools — all
+          in one place.Join thousands of students reaching their goals faster
+          with smarter study resources.
+        </p>
+      </div>
+      <div className="imageandendbanner flex justify-center items-center gap-8 md:gap-10 w-screen md:w-2/3">
+        <Image
+          src="/banner/wegraduate.png"
+          alt="Easy Explanation"
+          width={2008 / 4.25}
+          height={2840 / 4.25}
+          priority={true}
+          className="bannerimg"
+        />
+
+        <div className="endbanner">
+          <div className="flex justify-center items-center md:p-5">
+            <h1 className="font-extrabold md:text-6xl text-start">
+              SIMPLE <br /> CLEAR <br /> TRUSTED
+            </h1>
+          </div>
+          <div className="w-full flex justify-center items-center">
+            <button className="bg-indigo-600 text-white my-4 px-2 py-1 gap-4 md:px-4 md:py-2 text-base rounded-lg">
+              Get Started
+            </button>
+          </div>
         </div>
       </div>
     </div>
