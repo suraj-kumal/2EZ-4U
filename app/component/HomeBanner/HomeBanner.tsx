@@ -97,9 +97,9 @@ const HomeBanner = () => {
     //   </div>
     // </div>
 
-    <div className="block justify-center items-center gap-0 w-screen overflow-hidden md:flex">
-      <div className="startbanner w-screen p-4 md:w-1/4 md:px-8">
-        <h1 className="font-extrabold text-4xl text-start mb-4">
+    <div className="block justify-center items-center gap-0 md:gap-12 lg:gap-0 w-screen overflow-hidden md:flex">
+      <div className="startbanner w-screen p-4 md:p-2 md:w-1/4 lg:w-1/4 sm:w-full lg:px-8 lg:m-0 md:ml-4">
+        <h1 className="font-extrabold text-4xl lg:text-4xl md:text-2xl text-start mb-4">
           <FaGraduationCap />
           Your <br /> Success <br /> Start Here
         </h1>
@@ -109,7 +109,7 @@ const HomeBanner = () => {
           with smarter study resources.
         </p>
       </div>
-      <div className="imageandendbanner flex justify-center items-center gap-8 md:gap-10 w-screen md:w-2/3">
+      <div className="imageandendbanner flex justify-center items-center gap-8 md:gap-0 lg:gap-10 w-screen lg:w-2/3">
         <Image
           src="/banner/wegraduate.png"
           alt="Easy Explanation"
@@ -119,14 +119,14 @@ const HomeBanner = () => {
           className="bannerimg"
         />
 
-        <div className="endbanner">
+        <div className="endbanner m-0 lg:ml-0 flex flex-wrap justify-center items- h-full">
           <div className="flex justify-center items-center md:p-5">
-            <h1 className="font-extrabold md:text-6xl text-start">
+            <h1 className="font-extrabold text-2xl md:text-2xl lg:text-4xl text-start">
               SIMPLE <br /> CLEAR <br /> TRUSTED
             </h1>
           </div>
           <div className="w-full flex justify-center items-center">
-            <button className="bg-indigo-600 text-white my-4 px-2 py-1 gap-4 md:px-4 md:py-2 text-base rounded-lg">
+            <button className="bg-indigo-600 text-white m-2 px-2 py-1 gap-4 md:px-4 md:py-2 text-base rounded-lg">
               Get Started
             </button>
           </div>

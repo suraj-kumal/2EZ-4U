@@ -1,5 +1,20 @@
-@media only screen and (max-width: 767px) {
+/* Mobile: Up to 639px */
+@media only screen and (max-width: 639px) {
   img.bannerimg {
     width: 13rem;
+  }
+}
+
+/* Tablet: 640px to 1023px */
+@media only screen and (min-width: 640px) and (max-width: 1023px) {
+  img.bannerimg {
+    width: 23rem;
+  }
+}
+
+/* Desktop: 1024px and above */
+@media only screen and (min-width: 1024px) {
+  img.bannerimg {
+    width: 29rem; /* This will keep the original image size */
   }
 }
