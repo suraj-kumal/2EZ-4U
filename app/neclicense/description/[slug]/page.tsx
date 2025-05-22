@@ -44,10 +44,12 @@ async function Content(props: { params: any }) {
           <ArrowRightIcon className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
         </Link>
       </div>
-      <div
-        className="prose max-w-none content [&>p]:mb-6 [&>ul]:mb-6 [&>ol]:mb-6 [&>p:last-child]:mb-0 [&>ul:last-child]:mb-0 [&>ol:last-child]:mb-0"
-        dangerouslySetInnerHTML={{ __html: cleanedHtml }}
-      />
+      <div className="flex justify-center items-center">
+        <div
+          className="prose lg:max-w-screen-lg md:max-w-screen-lg sm:max-w-screen-sm content [&>p]:mb-6 [&>ul]:mb-6 [&>ol]:mb-6 [&>p:last-child]:mb-0 [&>ul:last-child]:mb-0 [&>ol:last-child]:mb-0"
+          dangerouslySetInnerHTML={{ __html: cleanedHtml }}
+        />
+      </div>
     </div>
   );
 }
