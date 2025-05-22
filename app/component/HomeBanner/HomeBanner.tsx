@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { FaGraduationCap } from "react-icons/fa";
+import Link from "next/link";
 import "./homebanner.css";
 const HomeBanner = () => {
   return (
@@ -127,7 +128,7 @@ const HomeBanner = () => {
           </div>
           <div className="w-full flex justify-center items-center">
             <button className="bg-indigo-600 text-white m-2 px-2 py-1 gap-4 md:px-4 md:py-2 text-base rounded-lg">
-              Get Started
+              <Link href={"/courses"}>Get Started</Link>
             </button>
           </div>
         </div>

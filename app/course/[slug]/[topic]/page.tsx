@@ -119,27 +119,28 @@ const Content = async (props: any) => {
         />
       </div>
 
-      <div className="flex justify-between items-center px-8 py-6 border-t">
-        <div>
+      <div className="block md:flex md:justify-evenly md:items-center w-full px-0 py-6 border-t">
+        <div className="prev mb-4 md:mb-0 text-left">
           {previousTopic && (
             <Link
               href={`/course/${slug}/${previousTopic.slug}`}
-              className="flex flex-col items-start px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded transition"
+              className="flex flex-col items-start px-4 py-3 bg-gray-100 hover:bg-gray-200 rounded transition w-72 md:w-80"
             >
-              <span className="text-sm text-gray-600">
+              <span className="text-sm text-gray-600 mb-1">
                 {previousTopic.chapterTitle}
               </span>
               <span className="font-medium">← {previousTopic.title}</span>
             </Link>
           )}
         </div>
-        <div>
+
+        <div className="next flex justify-end md:justify-start text-right">
           {nextTopic && (
             <Link
               href={`/course/${slug}/${nextTopic.slug}`}
-              className="flex flex-col items-end px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded transition"
+              className="flex flex-col items-end px-4 py-3 bg-gray-100 hover:bg-gray-200 rounded transition w-72 md:w-80"
             >
-              <span className="text-sm text-gray-600">
+              <span className="text-sm text-gray-600 mb-1">
                 {nextTopic.chapterTitle}
               </span>
               <span className="font-medium">{nextTopic.title} →</span>
