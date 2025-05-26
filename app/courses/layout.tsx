@@ -1,33 +1,28 @@
-import Footer from "@/app/component/footer";
-import Navbar from "@/app/component/navbar";
-import { roboto, inter } from "@/app/ui/fonts";
-import "@/app/global.css";
-
 export const metadata = {
   title: {
-    default: "Easy Explanation - Online Web Tutorials & Programming Resources",
-    template: "%s | Easy Explanation",
+    default: "Courses - Online Web Tutorials & Programming Resources",
+    template: "%s| Easy Explanation",
   },
   description:
-    "Explore CS tutorials and programming resources. Learn Python, Java, JavaScript, data structures, algorithms, and web development with hands-on examples.",
+    "Browse our courses. Learn Python, Java, JavaScript, data structures, algorithms, and web development with structured courses and hands-on examples.",
   keywords: [
-    "computer science tutorials",
-    "programming languages",
-    "coding tutorials",
-    "Python tutorials",
-    "Java programming",
-    "JavaScript learning",
-    "data structures",
-    "algorithms",
-    "web development",
-    "coding projects",
-    "programming for beginners",
-    "software development",
-    "coding skills",
-    "learn coding online",
+    "programming courses",
+    "computer science courses",
+    "coding courses online",
+    "Python courses",
+    "Java programming courses",
+    "JavaScript courses",
+    "data structures courses",
+    "algorithms courses",
+    "web development courses",
+    "coding bootcamp",
+    "programming for beginners courses",
+    "software development courses",
+    "online coding courses",
+    "learn programming online",
   ],
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_SITE_URL}`,
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/courses`,
   },
   authors: [{ name: "Infography Technologies" }],
   creator: "Infography Technologies",
@@ -39,17 +34,18 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: `${process.env.NEXT_PUBLIC_SITE_URL}`, // Replace with your actual domain
+    url: `${process.env.NEXT_PUBLIC_SITE_URL}/courses`,
     siteName: "Easy Explanation",
-    title: "Easy Explanation - Online Web Tutorials & Programming Resources",
+    title:
+      "Courses - Easy Explanation - Online Web Tutorials & Programming Resources",
     description:
-      "Master programming with comprehensive tutorials on Python, Java, JavaScript, data structures, algorithms, and web development. Perfect for beginners and experienced developers.",
+      "Explore our structured programming courses covering Python, Java, JavaScript, data structures, algorithms, and web development. Perfect for beginners and experienced developers.",
     images: [
       {
         url: "/ezexplaincard.jpg", // Create this image (1200x630px recommended)
         width: 1200,
         height: 630,
-        alt: "Easy Explanation Online Tutorials",
+        alt: "Easy Explanation Online Courses",
         type: "image/png",
       },
     ],
@@ -60,9 +56,9 @@ export const metadata = {
     card: "summary_large_image",
     // site: "@your_twitter_handle", // Replace with your Twitter handle
     // creator: "@your_twitter_handle",
-    title: "Easy Explanation - Online Web Tutorials",
+    title: "Courses - Easy Explanation - Online Web Tutorials",
     description:
-      "Learn programming with comprehensive tutorials on Python, Java, JavaScript, and more. Perfect for all skill levels.",
+      "Browse structured programming courses covering Python, Java, JavaScript, and more. Perfect for all skill levels.",
     images: ["/ezexplaincard.png"], // Create this image (1200x600px recommended)
   },
 
@@ -128,24 +124,30 @@ export const metadata = {
 // JSON-LD Structured Data
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "IT-Organization",
-  name: "Easy Explanation",
+  "@type": "Course",
+  name: "Easy Explanation Programming Courses",
   description:
-    "Comprehensive online platform for computer science tutorials and programming resources",
-  url: `${process.env.NEXT_PUBLIC_SITE_URL}`, // Replace with your actual domain
-  logo: `${process.env.NEXT_PUBLIC_SITE_URL}/logo.png`, // Add your logo URL
+    "Comprehensive online programming courses covering computer science fundamentals and practical development skills",
+  url: `${process.env.NEXT_PUBLIC_SITE_URL}/courses`,
+  provider: {
+    "@type": "Organization",
+    name: "Easy Explanation",
+    url: `${process.env.NEXT_PUBLIC_SITE_URL}`,
+    logo: `${process.env.NEXT_PUBLIC_SITE_URL}/logo.png`,
+  },
   // sameAs: [
   //   "https://twitter.com/your_handle", // Add your social media URLs
   //   "https://linkedin.com/company/your_company",
   //   "https://github.com/your_github",
   // ],
-  // offers: {
-  //   "@type": "Offer",
-  //   price: "0",
-  //   priceCurrency: "USD",
-  //   availability: "https://schema.org/InStock",
-  // },
-  // educationalCredentialAwarded: "Certificate of Completion",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+  },
+  educationalCredentialAwarded: "Certificate of Completion",
+  coursePrerequisites: "Basic computer literacy",
   teaches: [
     "Python Programming",
     "Java Programming",
@@ -154,30 +156,22 @@ const jsonLd = {
     "Algorithms",
     "Web Development",
   ],
+  audience: {
+    "@type": "Audience",
+    audienceType: "Students, Developers, Programming Enthusiasts",
+  },
+  inLanguage: "en",
+  availableLanguage: "English",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="no-scrollbar">
-      <head>
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
-      <body
-        className={`${inter.className} antialiased overflow-y-auto no-scrollbar relative z-0`}
-      >
-        <Navbar />
-        <main role="main">{children}</main>
-        <div className="h-1 bg-white w-full"></div>
-        <Footer />
-      </body>
-    </html>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <main role="courses">{children}</main>
+    </>
   );
 }
