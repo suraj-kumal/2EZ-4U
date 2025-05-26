@@ -22,7 +22,7 @@ export async function generateMetadata({
     course.meta_description || "Learn more about this course";
   const pageKeywords = course.keywords || "course, learning, education";
   const canonicalUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/course/description/${slug}`;
-  const ogImageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/SEOcard.png`;
+  const ogImageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/ezexplaincard.png`;
 
   return {
     title: pageTitle,
