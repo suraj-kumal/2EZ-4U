@@ -26,6 +26,9 @@ export const metadata = {
     "coding skills",
     "learn coding online",
   ],
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL}`,
+  },
   authors: [{ name: "Infography Technologies" }],
   creator: "Infography Technologies",
   publisher: "Infography Technologies",
@@ -168,7 +171,7 @@ export default function RootLayout({
         />
 
         {/* Canonical URL - replace with your actual domain */}
-        <link rel="canonical" href={process.env.NEXT_PUBLIC_SITE_URL} />
+        {/* <link rel="canonical" href={process.env.NEXT_PUBLIC_SITE_URL} /> */}
       </head>
       <body
         className={`${inter.className} antialiased overflow-y-auto no-scrollbar relative z-0`}
