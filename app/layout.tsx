@@ -1,47 +1,5 @@
-// import Footer from "./component/footer";
-// import Navbar from "./component/navbar";
-// import { roboto, inter } from "@/app/ui/fonts";
-// import "@/app/global.css";
-// export const metadata = {
-//   title: "EasyExplanation",
-//   icons: {
-//     icon: [
-//       { url: "faviconico/favicon.ico", type: "image/x-icon" },
-//       {
-//         url: "faviconico/favicon-32x32.png",
-//         sizes: "32x32",
-//         type: "image/png",
-//       },
-//       {
-//         url: "faviconico/favicon-16x16.png",
-//         sizes: "16x16",
-//         type: "image/png",
-//       },
-//     ],
-//     shortcut: [{ url: "/favicon.ico", type: "image/x-icon" }],
-//   },
-// };
-
-// export default function RootLayout({
-//   children,
-// }: {
-//   children: React.ReactNode;
-// }) {
-//   return (
-//     <html lang="en" className="no-scrollbar">
-//       <body
-//         className={`${inter.className} antialiased overflow-y-auto no-scrollbar relative z-0`}
-//       >
-//         <Navbar />
-//         {children}
-//         <div className="h-1 bg-white w-full"></div>
-//         <Footer />
-//       </body>
-//     </html>
-//   );
-// }
-import Footer from "./component/footer";
-import Navbar from "./component/navbar";
+import Footer from "@/app/component/footer";
+import Navbar from "@/app/component/navbar";
 import { roboto, inter } from "@/app/ui/fonts";
 import "@/app/global.css";
 
@@ -51,7 +9,7 @@ export const metadata = {
     template: "%s | Easy Explanation",
   },
   description:
-    "Explore comprehensive computer science tutorials and programming resources. Learn Python, Java, JavaScript, data structures, algorithms, and web development with hands-on examples and expert guidance.",
+    "Explore CS tutorials and programming resources. Learn Python, Java, JavaScript, data structures, algorithms, and web development with hands-on examples.",
   keywords: [
     "computer science tutorials",
     "programming languages",
@@ -68,28 +26,28 @@ export const metadata = {
     "coding skills",
     "learn coding online",
   ],
-  authors: [{ name: "Easy Explanation Team" }],
-  creator: "Easy Explanation",
-  publisher: "Easy Explanation",
+  authors: [{ name: "Infography Technologies" }],
+  creator: "Infography Technologies",
+  publisher: "Infography Technologies",
   category: "Education",
-  classification: "Programming Education",
+  classification: "Computer Science",
 
   // Open Graph metadata for social sharing
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://your-domain.com", // Replace with your actual domain
+    url: `${process.env.NEXT_PUBLIC_SITE_URL}`, // Replace with your actual domain
     siteName: "Easy Explanation",
     title: "Easy Explanation - Online Web Tutorials & Programming Resources",
     description:
       "Master programming with comprehensive tutorials on Python, Java, JavaScript, data structures, algorithms, and web development. Perfect for beginners and experienced developers.",
     images: [
       {
-        url: "/og-image.jpg", // Create this image (1200x630px recommended)
+        url: "/ezexplaincard.jpg", // Create this image (1200x630px recommended)
         width: 1200,
         height: 630,
-        alt: "Easy Explanation Programming Tutorials",
-        type: "image/jpeg",
+        alt: "Easy Explanation Online Tutorials",
+        type: "image/png",
       },
     ],
   },
@@ -97,12 +55,12 @@ export const metadata = {
   // Twitter Card metadata
   twitter: {
     card: "summary_large_image",
-    site: "@your_twitter_handle", // Replace with your Twitter handle
-    creator: "@your_twitter_handle",
+    // site: "@your_twitter_handle", // Replace with your Twitter handle
+    // creator: "@your_twitter_handle",
     title: "Easy Explanation - Online Web Tutorials",
     description:
       "Learn programming with comprehensive tutorials on Python, Java, JavaScript, and more. Perfect for all skill levels.",
-    images: ["/twitter-image.jpg"], // Create this image (1200x600px recommended)
+    images: ["/ezexplaincard.png"], // Create this image (1200x600px recommended)
   },
 
   // Additional metadata
@@ -119,11 +77,11 @@ export const metadata = {
   },
 
   // Verification codes (add your actual verification codes)
-  verification: {
-    google: "your-google-verification-code",
-    // yandex: "your-yandex-verification-code",
-    // bing: "your-bing-verification-code",
-  },
+  // verification: {
+  //   google: "your-google-verification-code",
+  //   // yandex: "your-yandex-verification-code",
+  //   // bing: "your-bing-verification-code",
+  // },
 
   // Favicon and icons
   icons: {
@@ -167,24 +125,24 @@ export const metadata = {
 // JSON-LD Structured Data
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
+  "@type": "IT-Organization",
   name: "Easy Explanation",
   description:
     "Comprehensive online platform for computer science tutorials and programming resources",
-  url: "https://your-domain.com", // Replace with your actual domain
-  logo: "https://your-domain.com/logo.png", // Add your logo URL
-  sameAs: [
-    "https://twitter.com/your_handle", // Add your social media URLs
-    "https://linkedin.com/company/your_company",
-    "https://github.com/your_github",
-  ],
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-    availability: "https://schema.org/InStock",
-  },
-  educationalCredentialAwarded: "Certificate of Completion",
+  url: `${process.env.NEXT_PUBLIC_SITE_URL}`, // Replace with your actual domain
+  logo: `${process.env.NEXT_PUBLIC_SITE_URL}/logo.png`, // Add your logo URL
+  // sameAs: [
+  //   "https://twitter.com/your_handle", // Add your social media URLs
+  //   "https://linkedin.com/company/your_company",
+  //   "https://github.com/your_github",
+  // ],
+  // offers: {
+  //   "@type": "Offer",
+  //   price: "0",
+  //   priceCurrency: "USD",
+  //   availability: "https://schema.org/InStock",
+  // },
+  // educationalCredentialAwarded: "Certificate of Completion",
   teaches: [
     "Python Programming",
     "Java Programming",
@@ -209,20 +167,8 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
 
-        {/* Preconnect to external domains for performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-
         {/* Canonical URL - replace with your actual domain */}
-        <link rel="canonical" href="https://your-domain.com" />
-
-        {/* Additional performance hints */}
-        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+        <link rel="canonical" href={process.env.NEXT_PUBLIC_SITE_URL} />
       </head>
       <body
         className={`${inter.className} antialiased overflow-y-auto no-scrollbar relative z-0`}
