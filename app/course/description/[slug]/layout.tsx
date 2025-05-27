@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import fetchSeo from "@/app/course/data/fetchSeo";
 import { Metadata } from "next";
 
 interface LayoutProps {
@@ -15,51 +14,73 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const props = await { params };
   const slug = params.slug;
-  const course = await fetchSeo(slug);
 
-  const pageTitle = course.title || "Course Page";
-  const pageDescription =
-    course.meta_description || "Learn more about this course";
-  const pageKeywords = course.keywords || "course, learning, education";
-  const canonicalUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/course/description/${slug}`;
-  const ogImageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/ezexplaincard.png`;
+  const canonicalUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/necliense/description/${slug}`;
 
   return {
-    title: pageTitle,
-    description: pageDescription,
-    keywords: pageKeywords,
-    authors: [{ name: "Infography Technology" }],
-    publisher: "Infography Technologies",
+    title: {
+      default: "NEC License Course - Nepal Engineering Council Training",
+      template: "%s | Easy Explanation",
+    },
+    description:
+      "Easy Explanation offers a specialized online NEC license prep course for Computer Engineering grads with video tutorials, expert mentorship, and practice exams.",
+    keywords: [
+      "NEC license course online",
+      "Nepal Engineering Council license",
+      "Professional Engineer PE license course",
+      "NEC license preparation Nepal",
+    ],
+    authors: [{ name: "Easy Explanation" }],
+    publisher: "Easy Explanation",
     alternates: {
       canonical: canonicalUrl,
     },
     robots: {
       index: true,
       follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-snippet": -1,
+        "max-image-preview": "large",
+        "max-video-preview": -1,
+      },
     },
     openGraph: {
-      title: pageTitle,
-      description: pageDescription,
       url: canonicalUrl,
-      images: [ogImageUrl],
+      title: "NEC License Course - Nepal Engineering Council Training ",
+      description:
+        "Prepare for your NEC license with Easy Explanation's online course for Computer Engineers in Nepal.",
+      siteName: "Easy Explanation",
       type: "website",
+      locale: "en_US",
+      images: [
+        {
+          url: "/ezexplaincard.png",
+          width: 1200,
+          height: 630,
+          alt: "NEC License Course - Easy Explanation Online Tutorial",
+          type: "image/png",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
-      title: pageTitle,
-      description: pageDescription,
-      images: [ogImageUrl],
+      title: "NEC License Course - Nepal Engineering Council Training",
+      description:
+        "Easy Explanation NEC license tutorial for Nepalese engineers. Structured, mentored, and mock-tested.",
+      images: ["/ezexplaincard.png"],
     },
     icons: {
       icon: [
-        { url: "/faviconico/favicon.ico", type: "image/x-icon" },
+        { url: "/favicon.ico", type: "image/x-icon" },
         {
-          url: "/faviconico/favicon-32x32.png",
+          url: "/favicon-32x32.png",
           sizes: "32x32",
           type: "image/png",
         },
         {
-          url: "/faviconico/favicon-16x16.png",
+          url: "/favicon-16x16.png",
           sizes: "16x16",
           type: "image/png",
         },
@@ -73,43 +94,78 @@ const Layout = async (props: LayoutProps) => {
   const params =
     props.params instanceof Promise ? await props.params : props.params;
   const slug = await params.slug;
+  const canonicalUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/neclicense/description/${slug}`;
 
-  // Fetch SEO data for this course
-  const course = await fetchSeo(slug);
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    name: "NEC License Course - Nepal Engineering Council Training",
+    description:
+      "Easy Explanation provides an online NEC license preparation course tailored for Computer Engineering graduates in Nepal.",
+    url: canonicalUrl,
+    image: `${process.env.NEXT_PUBLIC_SITE_URL}/ezexplaincard.png`,
+    provider: {
+      "@type": "ITOrganization",
+      name: "Easy Explanation",
+      url: `${process.env.NEXT_PUBLIC_SITE_URL}`,
+      logo: `${process.env.NEXT_PUBLIC_SITE_URL}/logo.png`,
+    },
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+    },
+    coursePrerequisites:
+      "Engineering degree from recognized institution in Nepal",
+    teaches: [
+      "NEC Regulations",
+      "Engineering Ethics",
+      "PE, EIT, Consulting License Prep",
+    ],
+    audience: {
+      "@type": "Audience",
+      audienceType: "Engineering Graduates",
+      geographicArea: {
+        "@type": "Country",
+        name: "Nepal",
+      },
+    },
+    courseMode: "online",
+  };
 
-  // Use course data for SEO metadata
-  const pageTitle = course.title || "Course Page";
-  const pageDescription =
-    course.meta_description || "Learn more about this course";
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    name: "Easy Explanation",
+    url: `${process.env.NEXT_PUBLIC_SITE_URL}`,
+    logo: `${process.env.NEXT_PUBLIC_SITE_URL}/logo.png`,
+    description:
+      "Online tutorial platform providing comprehensive NEC license preparation courses.",
+  };
 
   return (
     <>
-      <main>{props.children}</main>
-
-      {/* Structured Data for Course */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Course",
-            name: pageTitle,
-            description: pageDescription,
-            provider: {
-              "@type": "Organization",
-              name: "Infography Technology",
-              logo: {
-                "@type": "ImageObject",
-                url: "https://ezexplanation.com/logo.png",
-              },
-            },
-            url: `https://ezexplanation.com/course/description/${slug}`,
-            keywords: course.keywords
-              ?.split(",")
-              .map((keyword: string) => keyword.trim()),
-          }),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <main role="neclicense" itemScope itemType="https://schema.org/Course">
+        <meta
+          itemProp="name"
+          content="NEC License Course - Nepal Engineering Council Training"
+        />
+        <meta
+          itemProp="description"
+          content="Easy Explanation NEC license course for Computer Engineers in Nepal."
+        />
+        <meta itemProp="provider" content="Easy Explanation" />
+        {props.children}
+      </main>
     </>
   );
 };
