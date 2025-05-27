@@ -11,7 +11,7 @@ type PageProps = {
 
 export async function generateMetadata(props: any): Promise<Metadata> {
   const { params } = await props;
-  const { topic } = await params;
+  const { slug, topic } = await params;
 
   try {
     const topicContent = await fetchMaterials(topic);
@@ -34,12 +34,17 @@ export async function generateMetadata(props: any): Promise<Metadata> {
       return [...new Set([...baseWords, ...additionalKeywords])].join(", ");
     };
 
+    const canonicalUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/neclicense/${slug}/${topic}`;
+
     const keywords = generateKeywords(topicContent.title);
 
     return {
       title: topicContent.title,
       description: `Detailed explanation of ${topicContent.title}. Learn everything you need to know about this topic.`,
       keywords: keywords,
+      alternates: {
+        canonical: canonicalUrl,
+      },
       icons: {
         icon: [
           { url: "/faviconico/favicon.ico", type: "image/x-icon" },
@@ -60,10 +65,28 @@ export async function generateMetadata(props: any): Promise<Metadata> {
         title: topicContent.title,
         description: `Detailed explanation of ${topicContent.title}. Learn everything you need to know about this topic.`,
         type: "article",
+        images: [
+          {
+            url: "/ezexplaincard.png",
+            width: 1200,
+            height: 630,
+            alt: "NEC License Course - Easy Explanation Online Tutorial",
+            type: "image/png",
+          },
+        ],
       },
       twitter: {
         card: "summary",
         title: topicContent.title,
+        images: [
+          {
+            url: "/ezexplaincard.png",
+            width: 1200,
+            height: 630,
+            alt: "NEC License Course - Easy Explanation Online Tutorial",
+            type: "image/png",
+          },
+        ],
         description: `Detailed explanation of ${topicContent.title}. Learn everything you need to know about this topic.`,
       },
     };

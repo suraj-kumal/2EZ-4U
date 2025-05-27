@@ -57,10 +57,28 @@ export async function generateMetadata(props: any): Promise<Metadata> {
         title: topicContent.title,
         description: `Detailed explanation of ${topicContent.title}. Learn everything you need to know about this topic.`,
         type: "article",
+        images: [
+          {
+            url: "/ezexplaincard.png",
+            width: 1200,
+            height: 630,
+            alt: "NEC License Course - Easy Explanation Online Tutorial",
+            type: "image/png",
+          },
+        ],
       },
       twitter: {
         card: "summary",
         title: topicContent.title,
+        images: [
+          {
+            url: "/ezexplaincard.png",
+            width: 1200,
+            height: 630,
+            alt: "NEC License Course - Easy Explanation Online Tutorial",
+            type: "image/png",
+          },
+        ],
         description: `Detailed explanation of ${topicContent.title}. Learn everything you need to know about this topic.`,
       },
     };

@@ -15,7 +15,7 @@ export async function generateMetadata({
   const props = await { params };
   const slug = params.slug;
 
-  const canonicalUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/necliense/description/${slug}`;
+  const canonicalUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/neclicense/description/${slug}`;
 
   return {
     title: {
@@ -23,15 +23,15 @@ export async function generateMetadata({
       template: "%s | Easy Explanation",
     },
     description:
-      "Easy Explanation offers a specialized online NEC license prep course for Computer Engineering grads with video tutorials, expert mentorship, and practice exams.",
+      "Easy Explanation offers an online NEC license prep course for Computer Engineering grads with video tutorials, expert mentorship, and practice exams.",
     keywords: [
       "NEC license course online",
       "Nepal Engineering Council license",
       "Professional Engineer PE license course",
       "NEC license preparation Nepal",
     ],
-    authors: [{ name: "Easy Explanation" }],
-    publisher: "Easy Explanation",
+    authors: [{ name: "Infography Techologies" }],
+    publisher: "Infography Techologies",
     alternates: {
       canonical: canonicalUrl,
     },

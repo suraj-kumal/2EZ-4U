@@ -22,7 +22,7 @@ export const metadata = {
     "learn programming online",
   ],
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/courses`,
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/neclicense`,
   },
   authors: [{ name: "Infography Technologies" }],
   creator: "Infography Technologies",
@@ -114,11 +114,11 @@ export const metadata = {
   manifest: "/site.webmanifest",
 
   // Additional meta tags
-//   other: {
-//     "theme-color": "#ffffff",
-//     "msapplication-TileColor": "#da532c",
-//     "msapplication-config": "/browserconfig.xml",
-//   },
+  //   other: {
+  //     "theme-color": "#ffffff",
+  //     "msapplication-TileColor": "#da532c",
+  //     "msapplication-config": "/browserconfig.xml",
+  //   },
 };
 
 // JSON-LD Structured Data
