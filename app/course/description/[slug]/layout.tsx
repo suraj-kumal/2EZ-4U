@@ -4,17 +4,30 @@ import { Metadata } from "next";
 
 interface LayoutProps {
   children: ReactNode;
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   try {
-    const slug = params.slug;
+    const { slug } = await params;
     const course = await fetchSeo(slug);
+
+    // // Handle case where course is not found
+    // if (!course) {
+    //   return {
+    //     title: "Course Not Found - Easy Explanation",
+    //     description:
+    //       "The requested course could not be found. Browse our other courses to continue learning.",
+    //     robots: {
+    //       index: false,
+    //       follow: false,
+    //     },
+    //   };
+    // }
 
     const siteUrl =
       process.env.NEXT_PUBLIC_SITE_URL || "https://ezexplanation.com";
@@ -75,7 +88,7 @@ export async function generateMetadata({
           {
             url: ogImageUrl,
             width: 1200,
-            height: 630,
+            height: 600,
             alt: `${course.title} - Easy Explanation Course`,
             type: "image/png",
           },
@@ -85,7 +98,9 @@ export async function generateMetadata({
         card: "summary_large_image",
         title: course.title,
         description: course.meta_description,
-        images: [ogImageUrl]
+        images: [ogImageUrl],
+        // creator: "@your_twitter_handle", // Replace with your actual Twitter handle
+        // site: "@your_twitter_handle", // Replace with your actual Twitter handle
       },
       icons: {
         icon: [
@@ -117,13 +132,23 @@ export async function generateMetadata({
           },
         ],
       },
+      // manifest: "/site.webmanifest", // Add if you have a PWA manifest
+      // // Add verification for search engines (replace with your actual verification codes)
+      // verification: {
+      //   google: "your-google-verification-code",
+      //   yandex: "your-yandex-verification-code",
+      //   yahoo: "your-yahoo-verification-code",
+      //   other: {
+      //     "msvalidate.01": "your-bing-verification-code",
+      //   },
+      // },
       // Add structured data
       other: {
         "application/ld+json": JSON.stringify(structuredData),
       },
     };
   } catch (error) {
-    console.error("Error generating metadata for course:", params.slug, error);
+    console.error("Error generating metadata for course:", error);
 
     // Return fallback metadata on error
     return {
