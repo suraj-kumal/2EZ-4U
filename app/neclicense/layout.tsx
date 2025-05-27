@@ -1,25 +1,15 @@
 export const metadata = {
   title: {
-    default: "NEC License - Online Web Tutorials & Programming Resources",
-    template: "%s| Easy Explanation",
+    default: "NEC License Course - Nepal Engineering Council Training",
+    template: "%s | Easy Explanation",
   },
   description:
-    "Browse our courses. Learn Python, Java, JavaScript, data structures, algorithms, and web development with structured courses and hands-on examples.",
+    "Easy Explanation offers an online NEC license prep course for Computer Engineering grads with video tutorials, expert mentorship, and practice exams.",
   keywords: [
-    "programming courses",
-    "computer science courses",
-    "coding courses online",
-    "Python courses",
-    "Java programming courses",
-    "JavaScript courses",
-    "data structures courses",
-    "algorithms courses",
-    "web development courses",
-    "coding bootcamp",
-    "programming for beginners courses",
-    "software development courses",
-    "online coding courses",
-    "learn programming online",
+    "NEC license course online",
+    "Nepal Engineering Council license",
+    "Professional Engineer PE license course",
+    "NEC license preparation Nepal",
   ],
   alternates: {
     canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/neclicense`,
@@ -36,10 +26,9 @@ export const metadata = {
     locale: "en_US",
     url: `${process.env.NEXT_PUBLIC_SITE_URL}/neclicense`,
     siteName: "Easy Explanation",
-    title:
-      "Courses - Easy Explanation - Online Web Tutorials & Programming Resources",
+    title: "NEC License Course - Nepal Engineering Council Training ",
     description:
-      "Explore our structured programming courses in Python, Java, JavaScript, data structures, algorithms, and web development for learners and experienced devs.",
+      "Prepare for your NEC license with Easy Explanation's online course for Computer Engineers in Nepal.",
     images: [
       {
         url: "/ezexplaincard.png", // Create this image (1200x630px recommended)
@@ -56,9 +45,9 @@ export const metadata = {
     card: "summary_large_image",
     // site: "@your_twitter_handle", // Replace with your Twitter handle
     // creator: "@your_twitter_handle",
-    title: "Courses - Easy Explanation - Online Web Tutorials",
+    title: "NEC License Course - Nepal Engineering Council Training ",
     description:
-      "Browse structured programming courses covering Python, Java, JavaScript, and more. Perfect for all skill levels.",
+      "Prepare for your NEC license with Easy Explanation's online course for Computer Engineers in Nepal.",
     images: ["/ezexplaincard.png"], // Create this image (1200x600px recommended)
   },
 
@@ -132,7 +121,7 @@ const jsonLd = {
   provider: {
     "@type": "Organization",
     name: "Easy Explanation",
-    url: `${process.env.NEXT_PUBLIC_SITE_URL}/neclicense`,
+    url: `${process.env.NEXT_PUBLIC_SITE_URL}`,
     logo: `${process.env.NEXT_PUBLIC_SITE_URL}/logo.png`,
   },
   // sameAs: [
@@ -148,17 +137,10 @@ const jsonLd = {
   },
   educationalCredentialAwarded: "Certificate of Completion",
   coursePrerequisites: "Basic computer literacy",
-  teaches: [
-    "Python Programming",
-    "Java Programming",
-    "JavaScript Development",
-    "Data Structures",
-    "Algorithms",
-    "Web Development",
-  ],
+  teaches: ["NEC License preparation", "NEC License"],
   audience: {
     "@type": "Audience",
-    audienceType: "Students, Developers, Programming Enthusiasts",
+    audienceType: "Students, Developers, Engineers",
   },
   inLanguage: "en",
   availableLanguage: "English",
