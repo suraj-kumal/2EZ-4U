@@ -40,7 +40,7 @@ export const metadata = {
       "Courses - Easy Explanation - Online Web Tutorials & Programming Resources",
     description:
       "Explore our structured programming courses covering Python, Java, JavaScript, data structures, algorithms, and web development. Perfect for beginners and experienced developers.",
-    images: ["/ezexplaincard.png"],
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL}/ezexplaincard.png`],
   },
 
   // Twitter Card metadata
@@ -50,7 +50,7 @@ export const metadata = {
     title: "Courses - Easy Explanation - Online Web Tutorials",
     description:
       "Browse structured programming courses covering Python, Java, JavaScript, and more. Perfect for all skill levels.",
-    images: ["/ezexplaincard.png"], // Create this image (1200x600px recommended)
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL}/ezexplaincard.png`], // Create this image (1200x600px recommended)
   },
 
   // Additional metadata
