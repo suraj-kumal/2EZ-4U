@@ -1,15 +1,20 @@
 import { ReactNode } from "react";
 import { Metadata } from "next";
 
-type LayoutProps = {
+interface LayoutProps {
+  params: Promise<{ slug: string }>;
   children: ReactNode;
-  params: { slug: string };
-};
+}
 
+// Generate metadata dynamically
 export async function generateMetadata({
   params,
-}: LayoutProps): Promise<Metadata> {
+}: {
+  params: any;
+}): Promise<Metadata> {
+  const props = await { params };
   const slug = params.slug;
+
   const canonicalUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/necliense/description/${slug}`;
 
   return {
@@ -25,14 +30,27 @@ export async function generateMetadata({
       "Professional Engineer PE license course",
       "NEC license preparation Nepal",
     ],
+    authors: [{ name: "Easy Explanation" }],
+    publisher: "Easy Explanation",
     alternates: {
       canonical: canonicalUrl,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-snippet": -1,
+        "max-image-preview": "large",
+        "max-video-preview": -1,
+      },
     },
     openGraph: {
       url: canonicalUrl,
       title: "NEC License Course - Nepal Engineering Council Training ",
       description:
-        "Prepare for your NEC license with Easy Explanation’s online course for Computer Engineers in Nepal.",
+        "Prepare for your NEC license with Easy Explanation's online course for Computer Engineers in Nepal.",
       siteName: "Easy Explanation",
       type: "website",
       locale: "en_US",
@@ -53,22 +71,27 @@ export async function generateMetadata({
         "Easy Explanation NEC license tutorial for Nepalese engineers. Structured, mentored, and mock-tested.",
       images: ["/ezexplaincard.png"],
     },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-snippet": -1,
-        "max-image-preview": "large",
-        "max-video-preview": -1,
-      },
+    icons: {
+      icon: [
+        { url: "/favicon.ico", type: "image/x-icon" },
+        {
+          url: "/favicon-32x32.png",
+          sizes: "32x32",
+          type: "image/png",
+        },
+        {
+          url: "/favicon-16x16.png",
+          sizes: "16x16",
+          type: "image/png",
+        },
+      ],
+      shortcut: [{ url: "/favicon.ico", type: "image/x-icon" }],
     },
   };
 }
 
-export default function Layout({ children, params }: LayoutProps) {
-  const slug = params.slug;
+const Layout = async (props: LayoutProps) => {
+  const { slug } = await props.params;
   const canonicalUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/neclicense/description/${slug}`;
 
   const jsonLd = {
@@ -139,8 +162,10 @@ export default function Layout({ children, params }: LayoutProps) {
           content="Easy Explanation NEC license course for Computer Engineers in Nepal."
         />
         <meta itemProp="provider" content="Easy Explanation" />
-        {children}
+        {props.children}
       </main>
     </>
   );
-}
+};
+
+export default Layout;
