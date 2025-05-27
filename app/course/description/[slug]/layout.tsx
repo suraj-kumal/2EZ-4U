@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { Metadata } from "next";
 
 interface LayoutProps {
-  params: any;
+  params: Promise<{ slug: string }>;
   children: ReactNode;
 }
 
@@ -91,9 +91,7 @@ export async function generateMetadata({
 }
 
 const Layout = async (props: LayoutProps) => {
-  const params =
-    props.params instanceof Promise ? await props.params : props.params;
-  const slug = await params.slug;
+  const { slug } = await props.params;
   const canonicalUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/neclicense/description/${slug}`;
 
   const jsonLd = {
