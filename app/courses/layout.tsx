@@ -42,7 +42,7 @@ export const metadata = {
       "Explore our structured programming courses covering Python, Java, JavaScript, data structures, algorithms, and web development. Perfect for beginners and experienced developers.",
     images: [
       {
-        url: "/ezexplaincard.jpg", // Create this image (1200x630px recommended)
+        url: "/ezexplaincard.png", // Create this image (1200x630px recommended)
         width: 1200,
         height: 630,
         alt: "Easy Explanation Online Courses",
