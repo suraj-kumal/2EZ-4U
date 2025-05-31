@@ -177,6 +177,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <meta
+          name="google-adsense-account"
+          content={process.env.NEXT_PUBLIC_GOOGLE_ADS_CLIENTID}
+        />
+      <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body
         className={`${inter.className} antialiased overflow-y-auto no-scrollbar relative z-0`}
