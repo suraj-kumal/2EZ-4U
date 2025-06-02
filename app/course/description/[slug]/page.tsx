@@ -34,7 +34,7 @@ async function Content(props: { params: any }) {
     : "";
 
   return (
-    <div className="px-8 py-8 sm:py-12 sm:px-12">
+    <div className="px-8 py-8 sm:py-12 sm:px-12 min-h-[50vh]">
       <div className="w-full flex justify-center items-center mx-0 my-4 sm:mx-4 sm:my-8">
         <Link
           href={`/course/${slug}`}
