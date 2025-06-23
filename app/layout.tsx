@@ -177,11 +177,16 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <meta
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3719927847357498"
+          crossOrigin="anonymous"
+        ></script>
+        {/* <meta
           name="google-adsense-account"
           content={process.env.NEXT_PUBLIC_GOOGLE_ADS_CLIENTID}
-        />
-      <link rel="manifest" href="/site.webmanifest" />
+        /> */}
+        <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body
         className={`${inter.className} antialiased overflow-y-auto no-scrollbar relative z-0`}
