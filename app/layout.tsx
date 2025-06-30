@@ -2,6 +2,8 @@ import Footer from "@/app/component/footer";
 import Navbar from "@/app/component/navbar";
 import { roboto, inter } from "@/app/ui/fonts";
 import "@/app/global.css";
+import AdBanner from "./component/AdBanner";
+import Script from "next/script";
 
 export const metadata = {
   title: {
@@ -177,21 +179,27 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <script
+
+        <Script
+          id="adsbygoogle-init"
+          strategy="afterInteractive"
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3719927847357498"
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_CLIENT}`}
           crossOrigin="anonymous"
-        ></script>
-        {/* <meta
-          name="google-adsense-account"
-          content={process.env.NEXT_PUBLIC_GOOGLE_ADS_CLIENTID}
-        /> */}
+        />
+
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body
         className={`${inter.className} antialiased overflow-y-auto no-scrollbar relative z-0`}
       >
+        <AdBanner
+          slot="1112358343"
+          format="horizontal"
+          style={{ display: "block", width: "100%", height: "90px" }}
+        />
         <Navbar />
+
         <main role="main">{children}</main>
         <div className="h-1 bg-white w-full"></div>
         <Footer />
