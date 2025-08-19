@@ -169,7 +169,7 @@ const Page = () => {
           }}
         >
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl py-4 text-center md:text-center mb-4 md:mb-0 relative z-10">
-            Meet Our Team
+            Contributers
           </h1>
         </div>
         <Splide
