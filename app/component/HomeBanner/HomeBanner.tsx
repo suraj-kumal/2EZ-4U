@@ -102,7 +102,7 @@ const HomeBanner = () => {
       <div className="startbanner w-screen p-4 md:p-2 md:w-1/4 lg:w-1/4 sm:w-full lg:px-8 lg:m-0 md:ml-4">
         <h1 className="font-extrabold text-4xl lg:text-4xl md:text-2xl text-start mb-4">
           <FaGraduationCap />
-          Your <br /> Success <br /> Start Here
+          Your <br /> Success <br /> Starts Here
         </h1>
         <p>
           Get easy-to-understand notes, past papers, and exam prep tools — all

@@ -40,7 +40,7 @@ const Footer = () => {
 
           {/* Social Media Icons */}
           <div className="flex space-x-4 mt-4">
-            <a href="#" aria-label="Facebook">
+            <a href="https://www.facebook.com/InfographyTechnologies" target="_blank" aria-label="Facebook">
               <div className="bg-white rounded-full p-2">
                 <svg
                   className="w-5 h-5 text-black"
@@ -56,7 +56,7 @@ const Footer = () => {
                 </svg>
               </div>
             </a>
-            <a href="#" aria-label="Instagram">
+            {/* <a href="#" aria-label="Instagram">
               <div className="bg-white rounded-full p-2 ">
                 <svg
                   className="w-5 h-5 text-black"
@@ -71,8 +71,8 @@ const Footer = () => {
                   />
                 </svg>
               </div>
-            </a>
-            <a href="#" aria-label="LinkedIn">
+            </a> */}
+            <a href="https://www.linkedin.com/company/infographytechnologies/" target="_blank" aria-label="LinkedIn">
               <div className="bg-white rounded-full p-2">
                 <svg
                   className="w-5 h-5 text-black"

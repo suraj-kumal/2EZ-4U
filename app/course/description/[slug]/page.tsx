@@ -46,7 +46,7 @@ async function Content(props: { params: any }) {
       </div>
       <div className="flex items-center justify-center">
         <div
-          className="prose lg:max-w-screen-lg md:max-w-screen-lg sm:max-w-screen-sm content [&>p]:mb-6 [&>ul]:mb-6 [&>ol]:mb-6 [&>p:last-child]:mb-0 [&>ul:last-child]:mb-0 [&>ol:last-child]:mb-0"
+          className="prose text-justify lg:max-w-screen-lg md:max-w-screen-lg sm:max-w-screen-sm content [&>p]:mb-6 [&>ul]:mb-6 [&>ol]:mb-6 [&>p:last-child]:mb-0 [&>ul:last-child]:mb-0 [&>ol:last-child]:mb-0"
           dangerouslySetInnerHTML={{ __html: cleanedHtml }}
         />
       </div>

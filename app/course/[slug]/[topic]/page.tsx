@@ -52,7 +52,7 @@ const Content = async (props: any) => {
       <div className="flex justify-center items-center">
         <div></div>
         <div
-          className="prose lg:max-w-screen-lg md:max-w-screen-lg sm:max-w-screen-sm px-4 py-8 md:px-12 sm:w-screen
+          className="prose text-justify lg:max-w-screen-lg md:max-w-screen-lg sm:max-w-screen-sm px-4 py-8 md:px-12 sm:w-screen
           content
           [&>p]:mb-6 [&>ul]:mb-6 [&>ol]:mb-6
           [&>p:last-child]:mb-0 [&>ul:last-child]:mb-0 [&>ol:last-child]:mb-0"
