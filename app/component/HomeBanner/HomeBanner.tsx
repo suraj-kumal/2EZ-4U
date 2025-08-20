@@ -45,7 +45,7 @@ const HomeBanner = () => {
       <div className="lg:hidden flex flex-col ">
         {/* Text Section - Top */}
         <div className="flex-1 flex flex-col justify-center items-center px-6 py-8 text-center">
-          <h1 className="text-2xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
+          <h1 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
             Your Success
             <br />
             Start Here
